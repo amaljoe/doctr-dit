@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
 import torch
-from backend.pytorch import DET_ARCHS, RECO_ARCHS, forward_image, load_predictor
+from backend.pytorch import DET_ARCHS, RECO_ARCHS, forward_image, load_predictor, translate_page_export
 
 from doctr.io import DocumentFile
 from doctr.utils.visualization import visualize_page
@@ -74,6 +74,34 @@ def main(det_archs, reco_archs):
     # Box threshold
     box_thresh = st.sidebar.slider("Box threshold", min_value=0.1, max_value=0.9, value=0.1, step=0.1)
     st.sidebar.write("\n")
+    
+    # Translation settings
+    st.sidebar.title("Translation")
+    enable_translation = st.sidebar.checkbox("Enable translation", value=False)
+    source_lang = None
+    target_lang = None
+    if enable_translation:
+        # Common language codes for translation
+        languages = {
+            "Auto-detect": "auto",
+            "English": "en",
+            "French": "fr",
+            "German": "de",
+            "Spanish": "es",
+            "Italian": "it",
+            "Portuguese": "pt",
+            "Russian": "ru",
+            "Chinese": "zh",
+            "Japanese": "ja",
+            "Korean": "ko",
+            "Arabic": "ar",
+            "Hindi": "hi",
+        }
+        source_lang = st.sidebar.selectbox("Source language", list(languages.keys()), index=1)
+        target_lang = st.sidebar.selectbox("Target language", [k for k in languages.keys() if k != "Auto-detect"], index=0)
+        source_lang = languages[source_lang]
+        target_lang = languages[target_lang]
+    st.sidebar.write("\n")
 
     if st.sidebar.button("Analyze page"):
         if uploaded_file is None:
@@ -113,8 +141,20 @@ def main(det_archs, reco_archs):
 
                 # Page reconsitution under input page
                 page_export = out.pages[0].export()
+                
+                # Translate if enabled
+                if enable_translation and source_lang and target_lang and source_lang != "auto":
+                    with st.spinner("Translating text..."):
+                        try:
+                            page_export = translate_page_export(page_export, source_lang, target_lang)
+                        except Exception as e:
+                            st.sidebar.error(f"Translation failed: {e}")
+                            st.sidebar.info("Proceeding without translation")
+                
                 if assume_straight_pages or (not assume_straight_pages and straighten_pages):
-                    img = out.pages[0].synthesize()
+                    # Use synthesize_page directly with translated export
+                    from doctr.utils.reconstitution import synthesize_page
+                    img = synthesize_page(page_export)
                     cols[3].image(img, clamp=True)
 
                 # Display JSON
