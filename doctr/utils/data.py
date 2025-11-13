@@ -9,11 +9,13 @@ import hashlib
 import logging
 import os
 import re
+import ssl
 import urllib
 import urllib.error
 import urllib.request
 from pathlib import Path
 
+import certifi
 from tqdm.auto import tqdm
 
 __all__ = ["download_from_url"]
@@ -25,8 +27,12 @@ USER_AGENT = "mindee/doctr"
 
 
 def _urlretrieve(url: str, filename: Path | str, chunk_size: int = 1024) -> None:
+    # Create SSL context with certifi certificates
+    ssl_context = ssl.create_default_context(cafile=certifi.where())
     with open(filename, "wb") as fh:
-        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": USER_AGENT})) as response:
+        with urllib.request.urlopen(
+            urllib.request.Request(url, headers={"User-Agent": USER_AGENT}), context=ssl_context
+        ) as response:
             with tqdm(total=response.length) as pbar:
                 for chunk in iter(lambda: response.read(chunk_size), ""):
                     if not chunk:
