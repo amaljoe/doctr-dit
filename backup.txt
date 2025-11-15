@@ -1,0 +1,110 @@
+import cv2
+import os
+import sys
+from doclayout_yolo import YOLOv10
+
+# Get the project root directory (parent of scripts directory)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
+
+# Set paths relative to project root
+image_path = os.path.join(project_root, "data", "mydata", "reg.png")
+output_path = os.path.join(project_root, "data", "mydata", "reg_yolo.jpg")
+
+# Check if image exists
+if not os.path.exists(image_path):
+    print(f"Error: Image not found at {image_path}")
+    sys.exit(1)
+
+print(f"Loading model...")
+try:
+    from huggingface_hub import hf_hub_download, list_repo_files
+
+    # First, check what files are in the repo
+    repo_id = "juliozhao/DocLayout-YOLO-DocStructBench"
+    print(f"Checking files in {repo_id}...")
+    try:
+        files = list(list_repo_files(repo_id, repo_type="model"))
+        print(f"Found {len(files)} files in repo")
+        # Look for model weight files
+        model_files = [f for f in files if f.endswith(
+            ('.pt', '.pth', '.onnx', '.bin'))]
+        print(f"Model files found: {model_files}")
+    except Exception as e:
+        print(f"Could not list repo files: {e}")
+        model_files = []
+
+    # Try to download and use the model file
+    if model_files:
+        # Use the first model file found
+        model_file = model_files[0]
+        print(f"Downloading {model_file}...")
+        model_path = hf_hub_download(
+            repo_id=repo_id,
+            filename=model_file,
+            repo_type="model"
+        )
+        print(f"Model downloaded to: {model_path}")
+        # Initialize YOLOv10 with the downloaded model
+        model = YOLOv10(model=model_path)
+        print("Model loaded successfully")
+    else:
+        # Fallback: try from_pretrained which should handle the download
+        print("Trying from_pretrained method...")
+        model = YOLOv10.from_pretrained(repo_id)
+        print("Model loaded successfully")
+
+except Exception as e:
+    print(f"Error loading model: {e}")
+    import traceback
+    traceback.print_exc()
+    print("\nTrying alternative: direct initialization with model path from cache...")
+    try:
+        # Try to find cached model
+        from huggingface_hub import scan_cache_dir
+        cache_info = scan_cache_dir()
+        # Look for the model in cache
+        for repo in cache_info.repos:
+            if "DocLayout-YOLO" in str(repo.repo_path):
+                print(f"Found cached model at: {repo.repo_path}")
+                # Try to find .pt files in the cache
+                import glob
+                pt_files = glob.glob(
+                    str(repo.repo_path / "**" / "*.pt"), recursive=True)
+                if pt_files:
+                    model = YOLOv10(model=pt_files[0])
+                    print("Model loaded from cache")
+                    break
+        else:
+            raise FileNotFoundError("Model not found in cache")
+    except Exception as e2:
+        print(f"All loading methods failed: {e2}")
+        print("\nPlease ensure:")
+        print("1. You have internet connection to download the model")
+        print("2. The HuggingFace model exists: juliozhao/DocLayout-YOLO-DocStructBench")
+        print("3. You have sufficient disk space for the model cache")
+        print("4. You may need to install: pip install huggingface_hub")
+        sys.exit(1)
+
+print(f"Performing prediction on {image_path}...")
+# Perform prediction
+det_res = model.predict(
+    image_path,        # Image to predict
+    imgsz=1024,        # Prediction image size
+    conf=0.2,          # Confidence threshold
+    device="cpu"
+)
+
+print(f"Annotating and saving result to {output_path}...")
+# Annotate and save the result
+annotated_frame = det_res[0].plot(pil=True, line_width=5, font_size=20)
+
+# Convert PIL image to numpy array if needed
+if hasattr(annotated_frame, 'save'):
+    # It's a PIL image
+    annotated_frame.save(output_path)
+else:
+    # It's already a numpy array
+    cv2.imwrite(output_path, annotated_frame)
+
+print(f"Result saved to {output_path}")
