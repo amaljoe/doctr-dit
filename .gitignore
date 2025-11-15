@@ -138,3 +138,7 @@ wandb/
 *.pt
 *.pb
 *.index
+
+models/
+data/
+outputs/
