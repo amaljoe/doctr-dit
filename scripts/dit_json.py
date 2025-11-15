@@ -61,6 +61,109 @@ torch.functional.meshgrid = silent_meshgrid
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
+def calculate_box_area(bbox: dict) -> float:
+    """Calculate the area of a bounding box.
+
+    Args:
+        bbox: Dictionary with x1, y1, x2, y2 keys
+
+    Returns:
+        Area of the bounding box
+    """
+    return (bbox["x2"] - bbox["x1"]) * (bbox["y2"] - bbox["y1"])
+
+
+def calculate_iou(box1: dict, box2: dict) -> float:
+    """Calculate Intersection over Union (IoU) between two bounding boxes.
+
+    Args:
+        box1: First bounding box dictionary with x1, y1, x2, y2 keys
+        box2: Second bounding box dictionary with x1, y1, x2, y2 keys
+
+    Returns:
+        IoU value between 0 and 1
+    """
+    # Calculate intersection
+    x1_inter = max(box1["x1"], box2["x1"])
+    y1_inter = max(box1["y1"], box2["y1"])
+    x2_inter = min(box1["x2"], box2["x2"])
+    y2_inter = min(box1["y2"], box2["y2"])
+
+    if x2_inter <= x1_inter or y2_inter <= y1_inter:
+        return 0.0
+
+    intersection = (x2_inter - x1_inter) * (y2_inter - y1_inter)
+
+    # Calculate union
+    area1 = calculate_box_area(box1)
+    area2 = calculate_box_area(box2)
+    union = area1 + area2 - intersection
+
+    if union == 0:
+        return 0.0
+
+    return intersection / union
+
+
+def post_process_detections(detections: list[dict], iou_threshold: float = 0.5) -> list[dict]:
+    """Post-process detections: change title to text and remove overlapping boxes.
+
+    Args:
+        detections: List of detection dictionaries
+        iou_threshold: IoU threshold for considering boxes as overlapping
+
+    Returns:
+        Post-processed list of detections
+    """
+    # Step 1: Change all "title" to "text"
+    processed = []
+    for detection in detections:
+        detection_copy = detection.copy()
+        if detection_copy["class"] == "title":
+            detection_copy["class"] = "text"
+        processed.append(detection_copy)
+
+    # Step 2: Remove overlapping boxes, keeping the larger one
+    if len(processed) <= 1:
+        return processed
+
+    # Sort by area (largest first) so we prefer larger boxes
+    processed.sort(key=lambda d: calculate_box_area(d["bbox"]), reverse=True)
+
+    # Keep only non-overlapping boxes
+    final_result = []
+    for detection in processed:
+        box = detection["bbox"]
+        box_area = calculate_box_area(box)
+        should_keep = True
+        to_remove = []
+
+        # Check against all existing boxes
+        for existing in final_result:
+            existing_box = existing["bbox"]
+            iou = calculate_iou(box, existing_box)
+
+            if iou > iou_threshold:
+                existing_area = calculate_box_area(existing_box)
+                if box_area < existing_area:
+                    # Current box is smaller, skip it
+                    should_keep = False
+                    break
+                else:
+                    # Current box is larger or equal, mark existing for removal
+                    to_remove.append(existing)
+
+        # Remove boxes that were marked for removal
+        for item in to_remove:
+            final_result.remove(item)
+
+        # Add current box if it should be kept
+        if should_keep:
+            final_result.append(detection)
+
+    return final_result
+
+
 def detections_to_page_format(detections: list[dict], img_height: int, img_width: int) -> dict:
     """Convert detection results to the format expected by visualize_page.
 
@@ -251,6 +354,9 @@ def main():
             "confidence": float(scores[i])
         }
         detections.append(detection)
+
+    # Post-process detections: change title to text and remove overlapping boxes
+    detections = post_process_detections(detections, iou_threshold=0.5)
 
     # Build JSON output with both formats
     results = {
