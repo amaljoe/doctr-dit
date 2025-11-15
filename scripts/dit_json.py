@@ -73,15 +73,15 @@ def calculate_box_area(bbox: dict) -> float:
     return (bbox["x2"] - bbox["x1"]) * (bbox["y2"] - bbox["y1"])
 
 
-def calculate_iou(box1: dict, box2: dict) -> float:
-    """Calculate Intersection over Union (IoU) between two bounding boxes.
+def calculate_intersection(box1: dict, box2: dict) -> float:
+    """Calculate intersection area between two bounding boxes.
 
     Args:
         box1: First bounding box dictionary with x1, y1, x2, y2 keys
         box2: Second bounding box dictionary with x1, y1, x2, y2 keys
 
     Returns:
-        IoU value between 0 and 1
+        Intersection area (0 if no intersection)
     """
     # Calculate intersection
     x1_inter = max(box1["x1"], box2["x1"])
@@ -92,25 +92,44 @@ def calculate_iou(box1: dict, box2: dict) -> float:
     if x2_inter <= x1_inter or y2_inter <= y1_inter:
         return 0.0
 
-    intersection = (x2_inter - x1_inter) * (y2_inter - y1_inter)
+    return (x2_inter - x1_inter) * (y2_inter - y1_inter)
 
-    # Calculate union
+
+def calculate_overlap_ratio(box1: dict, box2: dict) -> tuple[float, float]:
+    """Calculate overlap ratio for each box (intersection / box_area).
+
+    Args:
+        box1: First bounding box dictionary with x1, y1, x2, y2 keys
+        box2: Second bounding box dictionary with x1, y1, x2, y2 keys
+
+    Returns:
+        Tuple of (overlap_ratio_box1, overlap_ratio_box2)
+        Each ratio is intersection_area / box_area
+    """
+    intersection = calculate_intersection(box1, box2)
+
+    if intersection == 0.0:
+        return (0.0, 0.0)
+
     area1 = calculate_box_area(box1)
     area2 = calculate_box_area(box2)
-    union = area1 + area2 - intersection
 
-    if union == 0:
-        return 0.0
+    if area1 == 0 or area2 == 0:
+        return (0.0, 0.0)
 
-    return intersection / union
+    ratio1 = intersection / area1
+    ratio2 = intersection / area2
+
+    return (ratio1, ratio2)
 
 
-def post_process_detections(detections: list[dict], iou_threshold: float = 0.5) -> list[dict]:
+def post_process_detections(detections: list[dict], overlap_threshold: float = 0.75) -> list[dict]:
     """Post-process detections: change title to text and remove overlapping boxes.
 
     Args:
         detections: List of detection dictionaries
-        iou_threshold: IoU threshold for considering boxes as overlapping
+        overlap_threshold: Overlap ratio threshold (0.75 = 75%). If more than this
+                         percentage of a box overlaps with another, remove the smaller one.
 
     Returns:
         Post-processed list of detections
@@ -141,9 +160,11 @@ def post_process_detections(detections: list[dict], iou_threshold: float = 0.5) 
         # Check against all existing boxes
         for existing in final_result:
             existing_box = existing["bbox"]
-            iou = calculate_iou(box, existing_box)
+            overlap_ratio1, overlap_ratio2 = calculate_overlap_ratio(
+                box, existing_box)
 
-            if iou > iou_threshold:
+            # If more than threshold% of either box is overlapped, remove the smaller one
+            if overlap_ratio1 > overlap_threshold or overlap_ratio2 > overlap_threshold:
                 existing_area = calculate_box_area(existing_box)
                 if box_area < existing_area:
                     # Current box is smaller, skip it
@@ -356,7 +377,8 @@ def main():
         detections.append(detection)
 
     # Post-process detections: change title to text and remove overlapping boxes
-    detections = post_process_detections(detections, iou_threshold=0.5)
+    # If more than 75% of a box overlaps with another, keep only the bigger one
+    detections = post_process_detections(detections, overlap_threshold=0.75)
 
     # Build JSON output with both formats
     results = {
