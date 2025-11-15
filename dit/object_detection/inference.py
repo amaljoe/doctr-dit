@@ -81,7 +81,9 @@ def main():
     cfg.merge_from_file(args.config_file)
 
     # Step 2: add model weights URL to config
-    cfg.merge_from_list(args.opts)
+    # Filter out empty strings from opts
+    opts = [opt for opt in args.opts if opt]
+    cfg.merge_from_list(opts)
 
     # Step 3: set device
     device = "cuda" if torch.cuda.is_available() else "cpu"
