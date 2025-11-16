@@ -160,6 +160,7 @@ def visualize_page(
     scale: float = 10,
     interactive: bool = True,
     add_labels: bool = True,
+    boxes: np.ndarray | None = None,
     **kwargs: Any,
 ) -> Figure:
     """Visualize a full page with predicted blocks, lines and words
@@ -182,6 +183,8 @@ def visualize_page(
         scale: figsize of the largest windows side
         interactive: whether the plot should be interactive
         add_labels: for static plot, adds text labels on top of bounding box
+        boxes: optional additional boxes to draw, of shape (N, 4) in xyxy normalized format (0-1).
+               Each box is [x1, y1, x2, y2] in normalized coordinates.
         **kwargs: keyword arguments for the polygon patch
 
     Returns:
@@ -198,6 +201,47 @@ def visualize_page(
 
     if interactive:
         artists: list[patches.Patch] = []  # instantiate an empty list of patches (to be drawn on the page)
+    
+    # Draw additional boxes if provided
+    if boxes is not None:
+        # Convert to numpy array if it's a tensor
+        if hasattr(boxes, 'cpu'):
+            boxes = boxes.cpu().numpy()
+        elif hasattr(boxes, 'numpy'):
+            boxes = boxes.numpy()
+        boxes = np.asarray(boxes)
+        
+        # Ensure boxes is 2D with shape (N, 4)
+        if boxes.ndim == 1:
+            boxes = boxes.reshape(1, -1)
+        
+        if boxes.shape[1] != 4:
+            raise ValueError(f"boxes must have shape (N, 4) in xyxy format, got {boxes.shape}")
+        
+        # Generate colors for additional boxes
+        num_additional_boxes = boxes.shape[0]
+        additional_colors = get_colors(num_additional_boxes)
+        
+        # Draw each additional box with a different color
+        for i, box in enumerate(boxes):
+            x1, y1, x2, y2 = box
+            # Convert xyxy normalized to the geometry format expected by create_obj_patch
+            # Geometry format is ((xmin, ymin), (xmax, ymax)) in normalized coordinates
+            geometry = ((x1, y1), (x2, y2))
+            color = additional_colors[i]
+            
+            rect = create_obj_patch(
+                geometry,
+                page["dimensions"],
+                label=f"additional_box_{i}",
+                color=color,
+                linewidth=2,
+                fill=False,  # Don't fill, just draw outline
+                **kwargs,
+            )
+            ax.add_patch(rect)
+            if interactive:
+                artists.append(rect)
 
     for block in page["blocks"]:
         if not words_only:
