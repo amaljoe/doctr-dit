@@ -10,6 +10,8 @@ import streamlit as st
 import torch
 from backend.pytorch import DET_ARCHS, RECO_ARCHS, forward_image, load_predictor
 
+from translation import update_page_with_big_boxes
+from utils import synthesize_page
 from doctr.io import DocumentFile
 from doctr.utils.visualization import visualize_page
 
@@ -22,11 +24,12 @@ def main(det_archs, reco_archs):
     st.set_page_config(layout="wide")
 
     # Designing the interface
-    st.title("docTR: Document Text Recognition")
+    st.title("DIT Pro: Document Image Translation")
     # For newline
     st.write("\n")
     # Instructions
-    st.markdown("*Hint: click on the top-right corner of an image to enlarge it!*")
+    st.markdown(
+        "*Hint: click on the top-right corner of an image to enlarge it!*")
     # Set the columns
     cols = st.columns((1, 1, 1, 1))
     cols[0].subheader("Input page")
@@ -38,13 +41,15 @@ def main(det_archs, reco_archs):
     # File selection
     st.sidebar.title("Document selection")
     # Choose your own image
-    uploaded_file = st.sidebar.file_uploader("Upload files", type=["pdf", "png", "jpeg", "jpg"])
+    uploaded_file = st.sidebar.file_uploader(
+        "Upload files", type=["pdf", "png", "jpeg", "jpg"])
     if uploaded_file is not None:
         if uploaded_file.name.endswith(".pdf"):
             doc = DocumentFile.from_pdf(uploaded_file.read())
         else:
             doc = DocumentFile.from_images(uploaded_file.read())
-        page_idx = st.sidebar.selectbox("Page selection", [idx + 1 for idx in range(len(doc))]) - 1
+        page_idx = st.sidebar.selectbox(
+            "Page selection", [idx + 1 for idx in range(len(doc))]) - 1
         page = doc[page_idx]
         cols[0].image(page)
 
@@ -58,21 +63,27 @@ def main(det_archs, reco_archs):
     st.sidebar.write("\n")
     # Only straight pages or possible rotation
     st.sidebar.title("Parameters")
-    assume_straight_pages = st.sidebar.checkbox("Assume straight pages", value=True)
+    assume_straight_pages = st.sidebar.checkbox(
+        "Assume straight pages", value=True)
     # Disable page orientation detection
-    disable_page_orientation = st.sidebar.checkbox("Disable page orientation detection", value=False)
+    disable_page_orientation = st.sidebar.checkbox(
+        "Disable page orientation detection", value=False)
     # Disable crop orientation detection
-    disable_crop_orientation = st.sidebar.checkbox("Disable crop orientation detection", value=False)
+    disable_crop_orientation = st.sidebar.checkbox(
+        "Disable crop orientation detection", value=False)
     # Straighten pages
     straighten_pages = st.sidebar.checkbox("Straighten pages", value=False)
     # Export as straight boxes
-    export_straight_boxes = st.sidebar.checkbox("Export as straight boxes", value=False)
+    export_straight_boxes = st.sidebar.checkbox(
+        "Export as straight boxes", value=False)
     st.sidebar.write("\n")
     # Binarization threshold
-    bin_thresh = st.sidebar.slider("Binarization threshold", min_value=0.1, max_value=0.9, value=0.3, step=0.1)
+    bin_thresh = st.sidebar.slider(
+        "Binarization threshold", min_value=0.1, max_value=0.9, value=0.3, step=0.1)
     st.sidebar.write("\n")
     # Box threshold
-    box_thresh = st.sidebar.slider("Box threshold", min_value=0.1, max_value=0.9, value=0.1, step=0.1)
+    box_thresh = st.sidebar.slider(
+        "Box threshold", min_value=0.1, max_value=0.9, value=0.1, step=0.1)
     st.sidebar.write("\n")
 
     if st.sidebar.button("Analyze page"):
@@ -98,7 +109,8 @@ def main(det_archs, reco_archs):
                 # Forward the image to the model
                 seg_map = forward_image(predictor, page, forward_device)
                 seg_map = np.squeeze(seg_map)
-                seg_map = cv2.resize(seg_map, (page.shape[1], page.shape[0]), interpolation=cv2.INTER_LINEAR)
+                seg_map = cv2.resize(
+                    seg_map, (page.shape[1], page.shape[0]), interpolation=cv2.INTER_LINEAR)
 
                 # Plot the raw heatmap
                 fig, ax = plt.subplots()
@@ -108,13 +120,18 @@ def main(det_archs, reco_archs):
 
                 # Plot OCR output
                 out = predictor([page])
-                fig = visualize_page(out.pages[0].export(), out.pages[0].page, interactive=False, add_labels=False)
+                fig = visualize_page(out.pages[0].export(
+                ), out.pages[0].page, interactive=False, add_labels=False)
                 cols[2].pyplot(fig)
 
                 # Page reconsitution under input page
                 page_export = out.pages[0].export()
+                page_export = update_page_with_big_boxes(page, page_export)
                 if assume_straight_pages or (not assume_straight_pages and straighten_pages):
-                    img = out.pages[0].synthesize()
+                    img = synthesize_page(
+                        page_export,
+                        font_family="fonts/noto-mal.ttf",
+                    )
                     cols[3].image(img, clamp=True)
 
                 # Display JSON
