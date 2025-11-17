@@ -44,7 +44,7 @@ def intersection_area(word_box, big_box):
     return (x2 - x1) * (y2 - y1)
 
 
-def get_big_boxes(page_export, det_res):
+def get_big_boxes(page_export, det_res, types):
     big_boxes = det_res[0].boxes.xyxyn.tolist()
     big_boxes_children = [[] for _ in big_boxes]
 
@@ -61,7 +61,7 @@ def get_big_boxes(page_export, det_res):
                 inter_area = intersection_area(word_box, box)
                 overlap_ratio = inter_area / (word_area + 1e-8)
 
-                if overlap_ratio >= 0.75:
+                if overlap_ratio >= 0.75 and types[i]:
                     candidates.append((i, overlap_ratio, box_area(box)))
 
             if candidates:
@@ -104,10 +104,10 @@ def get_line(box, geometry):
 
 def update_page_with_layout(page, page_export):
     det_res = detect_text_yolo(page)
-    big_boxes, big_boxes_children = get_big_boxes(page_export, det_res)
     types = det_res[0].boxes.data[:, -1].int().cpu()
     mask = (0, 1, 4, 6, 7, 9)
     types = torch.isin(types, torch.tensor(mask))
+    big_boxes, big_boxes_children = get_big_boxes(page_export, det_res, types)
     lines = [get_line(big_boxes_children[i], big_boxes[i]) for i in range(
         len(big_boxes)) if big_boxes_children[i] and types[i]]
     page_export['blocks'][0]['lines'] = lines
