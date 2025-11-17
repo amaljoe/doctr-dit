@@ -119,7 +119,7 @@ def translate_lines(page_export):
     values = []
     for block in page_export['blocks']:
         for line in block['lines']:
-            if len(line['words']) > 0:
+            if len(line['words']) > 1:
                 logging.warning("More than 1 word in line")
             for word in line['words']:
                 values.append(word['value'])
