@@ -127,7 +127,7 @@ def main(det_archs, reco_archs):
                 # Page reconsitution under input page
                 page_export = out.pages[0].export()
                 page_export = update_page_with_layout(page, page_export)
-                # page_export = translate_lines(page_export)
+                page_export = translate_lines(page_export)
                 if assume_straight_pages or (not assume_straight_pages and straighten_pages):
                     img = synthesize_page(
                         page_export,
