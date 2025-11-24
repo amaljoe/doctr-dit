@@ -13,5 +13,10 @@ nvidia-smi
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 
+cd workspace/doctr-dit/
+source .venv/bin/activate
+
+jupyter lab --ip=0.0.0.0 --port=8888
+
 sleep infinity
 

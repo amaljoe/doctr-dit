@@ -1,0 +1,371 @@
+cn42-l40.prajna.iitb.ac.in
+Mon Nov 24 09:57:30 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    Off |   00000000:3F:00.0 Off |                    0 |
+| N/A   34C    P0             84W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA L40S                    Off |   00000000:40:00.0 Off |                    0 |
+| N/A   39C    P0             85W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA L40S                    Off |   00000000:AD:00.0 Off |                    0 |
+| N/A   44C    P0             88W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA L40S                    Off |   00000000:AE:00.0 Off |                    0 |
+| N/A   43C    P0             89W /  350W |       1MiB /  46068MiB |      1%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+/scratch/slurm_conf/spool/slurm/d/job39974/slurm_script: line 16: cd: workspace/doctr-dit/: No such file or directory
+[I 2025-11-24 09:57:40.789 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2025-11-24 09:57:40.792 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2025-11-24 09:57:40.794 ServerApp] jupyterlab | extension was successfully linked.
+[I 2025-11-24 09:57:40.797 ServerApp] notebook | extension was successfully linked.
+[I 2025-11-24 09:57:41.994 ServerApp] notebook_shim | extension was successfully linked.
+[I 2025-11-24 09:57:42.043 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2025-11-24 09:57:42.044 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2025-11-24 09:57:42.045 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2025-11-24 09:57:42.055 LabApp] JupyterLab extension loaded from /home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyterlab
+[I 2025-11-24 09:57:42.055 LabApp] JupyterLab application directory is /home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/share/jupyter/lab
+[I 2025-11-24 09:57:42.056 LabApp] Extension Manager is 'pypi'.
+[I 2025-11-24 09:57:42.138 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2025-11-24 09:57:42.142 ServerApp] notebook | extension was successfully loaded.
+[I 2025-11-24 09:57:42.143 ServerApp] Serving notebooks from local directory: /home/compiling-ganesh/24m0797/workspace/doctr-dit
+[I 2025-11-24 09:57:42.143 ServerApp] Jupyter Server 2.17.0 is running at:
+[I 2025-11-24 09:57:42.143 ServerApp] http://cn42-l40.prajna.iitb.ac.in:8888/lab?token=4664a38b23c331d2cc94e284c9a84095e8ad158b3af7fb27
+[I 2025-11-24 09:57:42.143 ServerApp]     http://127.0.0.1:8888/lab?token=4664a38b23c331d2cc94e284c9a84095e8ad158b3af7fb27
+[I 2025-11-24 09:57:42.143 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 2025-11-24 09:57:42.158 ServerApp] No web browser found: Error('could not locate runnable browser').
+[C 2025-11-24 09:57:42.158 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/compiling-ganesh/24m0797/.local/share/jupyter/runtime/jpserver-625474-open.html
+    Or copy and paste one of these URLs:
+        http://cn42-l40.prajna.iitb.ac.in:8888/lab?token=4664a38b23c331d2cc94e284c9a84095e8ad158b3af7fb27
+        http://127.0.0.1:8888/lab?token=4664a38b23c331d2cc94e284c9a84095e8ad158b3af7fb27
+[I 2025-11-24 09:57:42.189 ServerApp] Skipped non-installed server(s): basedpyright, bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyrefly, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[I 2025-11-24 09:58:27.249 ServerApp] 302 GET / (@192.168.1.109) 0.33ms
+[W 2025-11-24 10:00:26.976 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958574037 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:00:26.976 ServerApp] wrote error: 'Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae)
+[W 2025-11-24 10:00:26.993 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958574037 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 17.46ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:00:27.984 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:00:28.058 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 74.40ms referer=None
+[W 2025-11-24 10:00:28.137 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958575275 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:00:28.137 ServerApp] wrote error: 'Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae)
+[W 2025-11-24 10:00:28.138 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958575275 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.09ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:00:31.986 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:00:31.987 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.96ms referer=None
+[W 2025-11-24 10:00:32.066 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958579200 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:00:32.066 ServerApp] wrote error: 'Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae)
+[W 2025-11-24 10:00:32.067 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958579200 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.12ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:00:37.921 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958585038 (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:00:37.921 ServerApp] wrote error: 'Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481)
+[W 2025-11-24 10:00:37.922 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958585038 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.22ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:00:38.997 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:00:38.997 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.88ms referer=None
+[W 2025-11-24 10:00:39.090 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958586214 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:00:39.090 ServerApp] wrote error: 'Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae)
+[W 2025-11-24 10:00:39.091 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958586214 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.12ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:00:39.204 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:00:39.204 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.73ms referer=None
+[W 2025-11-24 10:00:39.295 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958586419 (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:00:39.295 ServerApp] wrote error: 'Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481)
+[W 2025-11-24 10:00:39.296 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958586419 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.10ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:00:41.009 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:00:41.010 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.91ms referer=None
+[W 2025-11-24 10:00:41.095 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958588221 (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:00:41.095 ServerApp] wrote error: 'Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481)
+[W 2025-11-24 10:00:41.096 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958588221 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.10ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:00:42.669 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:00:42.670 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.90ms referer=None
+[W 2025-11-24 10:00:42.758 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958589884 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:00:42.758 ServerApp] wrote error: 'Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae)
+[W 2025-11-24 10:00:42.759 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958589884 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.10ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:00:47.968 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:00:47.969 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.92ms referer=None
+[W 2025-11-24 10:00:48.058 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958595183 (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:00:48.058 ServerApp] wrote error: 'Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481)
+[W 2025-11-24 10:00:48.059 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958595183 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.13ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:00:54.986 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:00:54.987 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.93ms referer=None
+[W 2025-11-24 10:00:55.073 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958602199 (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:00:55.073 ServerApp] wrote error: 'Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481)
+[W 2025-11-24 10:00:55.074 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958602199 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.17ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:01:03.920 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:01:03.921 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.94ms referer=None
+[W 2025-11-24 10:01:04.040 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958611132 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:01:04.040 ServerApp] wrote error: 'Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae)
+[W 2025-11-24 10:01:04.041 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958611132 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.17ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:01:10.606 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:01:10.607 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae/channels?session_id=4f6804e4-b4e6-4915-b66a-5542bb952e03 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.93ms referer=None
+[W 2025-11-24 10:01:10.693 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958617819 (192.168.1.109): Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae
+[W 2025-11-24 10:01:10.693 ServerApp] wrote error: 'Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: f57cf0c7-e3a4-441a-a364-94164ca661ae)
+[W 2025-11-24 10:01:10.694 ServerApp] 404 GET /api/kernels/f57cf0c7-e3a4-441a-a364-94164ca661ae?1763958617819 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.17ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[I 2025-11-24 10:01:12.007 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[W 2025-11-24 10:01:21.373 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:01:21.373 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.91ms referer=None
+[W 2025-11-24 10:01:21.460 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958628585 (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:01:21.460 ServerApp] wrote error: 'Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481)
+[W 2025-11-24 10:01:21.460 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958628585 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.17ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:01:29.190 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:01:29.191 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481/channels?session_id=7dd8ecf6-6190-402a-a5a8-1de5d412701f (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.91ms referer=None
+[W 2025-11-24 10:01:29.285 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958636406 (192.168.1.109): Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481
+[W 2025-11-24 10:01:29.285 ServerApp] wrote error: 'Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: 9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481)
+[W 2025-11-24 10:01:29.286 ServerApp] 404 GET /api/kernels/9cb6d0fc-17a2-48ac-85f6-6cf2f13f3481?1763958636406 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.10ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:02:16.237 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2025-11-24 10:02:16.534 ServerApp] 404 GET /api/contents/notebooks/Untitled.ipynb?content=0&hash=0&1763958683658 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.83ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 10:02:16.534 ServerApp] 404 GET /api/contents/notebooks/Untitled.ipynb?content=0&hash=0&1763958683658 (192.168.1.109): No such file or directory: notebooks/Untitled.ipynb
+[W 2025-11-24 10:02:17.324 ServerApp] Notebook notebooks/translation.ipynb is not trusted
+[I 2025-11-24 10:02:18.875 ServerApp] Kernel started: a617bb38-192a-4abd-8a7e-7f58b3c61f33
+[I 2025-11-24 10:02:18.883 ServerApp] Kernel started: d0e8fc56-362a-4d62-a19d-a278bd553e17
+[I 2025-11-24 10:02:18.988 ServerApp] Kernel started: e184b09b-2694-4e97-ac78-71855bda2096
+[I 2025-11-24 10:02:20.171 ServerApp] Connecting to kernel d0e8fc56-362a-4d62-a19d-a278bd553e17.
+[W 2025-11-24 10:02:20.172 ServerApp] The websocket_ping_timeout (90000) cannot be longer than the websocket_ping_interval (30000).
+    Setting websocket_ping_timeout=30000
+[I 2025-11-24 10:02:20.202 ServerApp] Connecting to kernel a617bb38-192a-4abd-8a7e-7f58b3c61f33.
+[I 2025-11-24 10:02:20.350 ServerApp] Starting buffering for d0e8fc56-362a-4d62-a19d-a278bd553e17:dc1cb399-d335-443b-9813-8090f1824bb8
+[I 2025-11-24 10:02:20.467 ServerApp] Connecting to kernel d0e8fc56-362a-4d62-a19d-a278bd553e17.
+[I 2025-11-24 10:02:20.477 ServerApp] Connecting to kernel e184b09b-2694-4e97-ac78-71855bda2096.
+[I 2025-11-24 10:02:20.663 ServerApp] Starting buffering for e184b09b-2694-4e97-ac78-71855bda2096:f371a7ae-7ff9-40e4-90c8-0845a29566f6
+[I 2025-11-24 10:02:20.664 ServerApp] Connecting to kernel e184b09b-2694-4e97-ac78-71855bda2096.
+[I 2025-11-24 10:02:20.723 ServerApp] Connecting to kernel e184b09b-2694-4e97-ac78-71855bda2096.
+[I 2025-11-24 10:04:17.994 ServerApp] Saving file at /notebooks/evaluate.ipynb
