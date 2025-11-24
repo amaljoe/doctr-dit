@@ -454,3 +454,34 @@ zmq.error.ZMQError: Socket operation on non-socket
 [I 2025-11-24 11:14:02.683 ServerApp] Saving file at /notebooks/evaluate.ipynb
 [I 2025-11-24 11:16:03.064 ServerApp] Saving file at /notebooks/evaluate.ipynb
 [I 2025-11-24 11:18:03.379 ServerApp] Saving file at /notebooks/evaluate.ipynb
+/usr/bin/xdg-open: line 862: www-browser: command not found
+/usr/bin/xdg-open: line 862: links2: command not found
+/usr/bin/xdg-open: line 862: elinks: command not found
+/usr/bin/xdg-open: line 862: links: command not found
+/usr/bin/xdg-open: line 862: lynx: command not found
+/usr/bin/xdg-open: line 862: w3m: command not found
+xdg-open: no method available for opening '/tmp/tmputg4jmk3.PNG'
+/usr/bin/xdg-open: line 862: www-browser: command not found
+/usr/bin/xdg-open: line 862: links2: command not found
+/usr/bin/xdg-open: line 862: elinks: command not found
+/usr/bin/xdg-open: line 862: links: command not found
+/usr/bin/xdg-open: line 862: lynx: command not found
+/usr/bin/xdg-open: line 862: w3m: command not found
+xdg-open: no method available for opening '/tmp/tmp_z9aujlu.PNG'
+/usr/bin/xdg-open: line 862: www-browser: command not found
+/usr/bin/xdg-open: line 862: links2: command not found
+/usr/bin/xdg-open: line 862: elinks: command not found
+/usr/bin/xdg-open: line 862: links: command not found
+/usr/bin/xdg-open: line 862: lynx: command not found
+/usr/bin/xdg-open: line 862: w3m: command not found
+xdg-open: no method available for opening '/tmp/tmp6fn41d2e.PNG'
+[I 2025-11-24 11:20:03.722 ServerApp] Saving file at /notebooks/evaluate.ipynb
+/usr/bin/xdg-open: line 862: www-browser: command not found
+/usr/bin/xdg-open: line 862: links2: command not found
+/usr/bin/xdg-open: line 862: elinks: command not found
+/usr/bin/xdg-open: line 862: links: command not found
+/usr/bin/xdg-open: line 862: lynx: command not found
+/usr/bin/xdg-open: line 862: w3m: command not found
+xdg-open: no method available for opening '/tmp/tmpny7g75rz.PNG'
+[I 2025-11-24 11:22:04.374 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 11:24:04.884 ServerApp] Saving file at /notebooks/evaluate.ipynb
