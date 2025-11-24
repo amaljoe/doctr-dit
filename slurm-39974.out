@@ -369,3 +369,82 @@ Mon Nov 24 09:57:30 2025
 [I 2025-11-24 10:02:20.664 ServerApp] Connecting to kernel e184b09b-2694-4e97-ac78-71855bda2096.
 [I 2025-11-24 10:02:20.723 ServerApp] Connecting to kernel e184b09b-2694-4e97-ac78-71855bda2096.
 [I 2025-11-24 10:04:17.994 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:06:18.325 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:08:18.687 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:10:18.988 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:12:19.322 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:14:19.666 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:16:20.182 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[W 2025-11-24 10:18:50.204 ServerApp] WebSocket ping timeout after 119907 ms.
+[W 2025-11-24 10:18:50.468 ServerApp] WebSocket ping timeout after 119915 ms.
+[W 2025-11-24 10:18:50.665 ServerApp] WebSocket ping timeout after 119903 ms.
+[I 2025-11-24 10:18:55.206 ServerApp] Starting buffering for a617bb38-192a-4abd-8a7e-7f58b3c61f33:691f691e-d08e-4656-9725-0329631c2c87
+[I 2025-11-24 10:18:55.469 ServerApp] Starting buffering for d0e8fc56-362a-4d62-a19d-a278bd553e17:9c813119-abca-4eb5-af0b-4fc7e5e33c31
+[I 2025-11-24 10:18:55.666 ServerApp] Starting buffering for e184b09b-2694-4e97-ac78-71855bda2096:5aad1d3d-21f2-4162-ada6-45984c1de46b
+[I 2025-11-24 10:21:04.921 ServerApp] Connecting to kernel a617bb38-192a-4abd-8a7e-7f58b3c61f33.
+[I 2025-11-24 10:21:04.922 ServerApp] Restoring connection for a617bb38-192a-4abd-8a7e-7f58b3c61f33:691f691e-d08e-4656-9725-0329631c2c87
+[I 2025-11-24 10:21:08.606 ServerApp] Connecting to kernel d0e8fc56-362a-4d62-a19d-a278bd553e17.
+[I 2025-11-24 10:21:08.606 ServerApp] Restoring connection for d0e8fc56-362a-4d62-a19d-a278bd553e17:9c813119-abca-4eb5-af0b-4fc7e5e33c31
+[I 2025-11-24 10:21:15.007 ServerApp] Connecting to kernel e184b09b-2694-4e97-ac78-71855bda2096.
+[I 2025-11-24 10:21:15.007 ServerApp] Restoring connection for e184b09b-2694-4e97-ac78-71855bda2096:5aad1d3d-21f2-4162-ada6-45984c1de46b
+[I 2025-11-24 10:21:34.892 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:23:35.192 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:25:35.505 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:27:35.858 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:29:36.340 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[IPKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/kernelbase.py", line 471, in dispatch_shell
+    await result
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/ipkernel.py", line 366, in execute_request
+    await super().execute_request(stream, ident, parent)
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/kernelbase.py", line 850, in execute_request
+    reply_msg: dict[str, t.Any] = self.session.send(  # type:ignore[assignment]
+                                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        stream,
+        ^^^^^^^
+    ...<4 lines>...
+        ident=ident,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_client/session.py", line 863, in send
+    stream.send_multipart(to_send, copy=copy)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/zmq/sugar/socket.py", line 749, in send_multipart
+    self.send(msg, zmq.SNDMORE | flags, copy=copy, track=track)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/zmq/sugar/socket.py", line 698, in send
+    return super().send(data, flags=flags, copy=copy, track=track)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1152, in zmq.backend.cython._zmq.Socket.send
+    def send(self, data, flags=0, copy: bint = True, track: bint = False):
+    ^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1194, in zmq.backend.cython._zmq.Socket.send
+    _check_closed(self)
+    ^^^
+  File "zmq/backend/cython/_zmq.py", line 1339, in zmq.backend.cython._zmq._check_closed
+    raise ZMQError(ENOTSOCK)
+    ^^^
+zmq.error.ZMQError: Socket operation on non-socket
+[I 2025-11-24 10:31:10.036 ServerApp] Kernel restarted: d0e8fc56-362a-4d62-a19d-a278bd553e17
+[I 2025-11-24 10:31:10.145 ServerApp] Starting buffering for d0e8fc56-362a-4d62-a19d-a278bd553e17:9c813119-abca-4eb5-af0b-4fc7e5e33c31
+[I 2025-11-24 10:31:10.227 ServerApp] Connecting to kernel d0e8fc56-362a-4d62-a19d-a278bd553e17.
+[I 2025-11-24 10:31:10.227 ServerApp] Restoring connection for d0e8fc56-362a-4d62-a19d-a278bd553e17:9c813119-abca-4eb5-af0b-4fc7e5e33c31
+[I 2025-11-24 10:31:36.704 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:33:37.348 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:37:37.590 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:43:39.381 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:45:40.346 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:47:41.351 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:49:41.634 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 10:50:51.460 ServerApp] Starting buffering for d0e8fc56-362a-4d62-a19d-a278bd553e17:9c813119-abca-4eb5-af0b-4fc7e5e33c31
+[I 2025-11-24 10:50:51.461 ServerApp] Starting buffering for e184b09b-2694-4e97-ac78-71855bda2096:5aad1d3d-21f2-4162-ada6-45984c1de46b
+[I 2025-11-24 10:50:51.461 ServerApp] Starting buffering for a617bb38-192a-4abd-8a7e-7f58b3c61f33:691f691e-d08e-4656-9725-0329631c2c87
+[I 2025-11-24 10:57:19.812 ServerApp] Connecting to kernel e184b09b-2694-4e97-ac78-71855bda2096.
+[I 2025-11-24 10:57:19.812 ServerApp] Restoring connection for e184b09b-2694-4e97-ac78-71855bda2096:5aad1d3d-21f2-4162-ada6-45984c1de46b
+[I 2025-11-24 10:57:21.370 ServerApp] Connecting to kernel a617bb38-192a-4abd-8a7e-7f58b3c61f33.
+[I 2025-11-24 10:57:21.370 ServerApp] Restoring connection for a617bb38-192a-4abd-8a7e-7f58b3c61f33:691f691e-d08e-4656-9725-0329631c2c87
+[I 2025-11-24 10:57:23.244 ServerApp] Connecting to kernel d0e8fc56-362a-4d62-a19d-a278bd553e17.
+[I 2025-11-24 10:57:23.245 ServerApp] Restoring connection for d0e8fc56-362a-4d62-a19d-a278bd553e17:9c813119-abca-4eb5-af0b-4fc7e5e33c31
+[I 2025-11-24 10:58:01.266 ServerApp] Saving file at /notebooks/evaluate.ipynb
