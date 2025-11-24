@@ -485,3 +485,5 @@ xdg-open: no method available for opening '/tmp/tmp6fn41d2e.PNG'
 xdg-open: no method available for opening '/tmp/tmpny7g75rz.PNG'
 [I 2025-11-24 11:22:04.374 ServerApp] Saving file at /notebooks/evaluate.ipynb
 [I 2025-11-24 11:24:04.884 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 11:26:05.573 ServerApp] Saving file at /notebooks/evaluate.ipynb
+slurmstepd: error: *** JOB 39974 ON cn42-l40 CANCELLED AT 2025-11-24T11:26:17 ***

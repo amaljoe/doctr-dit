@@ -1,0 +1,298 @@
+cn40-l40.prajna.iitb.ac.in
+Mon Nov 24 16:57:46 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    Off |   00000000:3F:00.0 Off |                    0 |
+| N/A   37C    P0             86W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA L40S                    Off |   00000000:40:00.0 Off |                    0 |
+| N/A   38C    P0             85W /  350W |       1MiB /  46068MiB |      1%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA L40S                    Off |   00000000:AD:00.0 Off |                    0 |
+| N/A   43C    P0             84W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA L40S                    Off |   00000000:AE:00.0 Off |                    0 |
+| N/A   42C    P0             89W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+/scratch/slurm_conf/spool/slurm/d/job40114/slurm_script: line 16: cd: workspace/doctr-dit/: No such file or directory
+[I 2025-11-24 16:58:02.306 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2025-11-24 16:58:02.309 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2025-11-24 16:58:02.311 ServerApp] jupyterlab | extension was successfully linked.
+[I 2025-11-24 16:58:02.314 ServerApp] notebook | extension was successfully linked.
+[I 2025-11-24 16:58:05.579 ServerApp] notebook_shim | extension was successfully linked.
+[I 2025-11-24 16:58:05.726 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2025-11-24 16:58:05.727 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2025-11-24 16:58:05.728 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2025-11-24 16:58:05.738 LabApp] JupyterLab extension loaded from /home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyterlab
+[I 2025-11-24 16:58:05.738 LabApp] JupyterLab application directory is /home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/share/jupyter/lab
+[I 2025-11-24 16:58:05.739 LabApp] Extension Manager is 'pypi'.
+[I 2025-11-24 16:58:06.078 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2025-11-24 16:58:06.082 ServerApp] notebook | extension was successfully loaded.
+[I 2025-11-24 16:58:06.083 ServerApp] Serving notebooks from local directory: /home/compiling-ganesh/24m0797/workspace/doctr-dit
+[I 2025-11-24 16:58:06.083 ServerApp] Jupyter Server 2.17.0 is running at:
+[I 2025-11-24 16:58:06.083 ServerApp] http://cn40-l40.prajna.iitb.ac.in:8888/lab?token=b8ed8b9e541406eb4ee578cff02b4d7424fc44fb97025a6e
+[I 2025-11-24 16:58:06.083 ServerApp]     http://127.0.0.1:8888/lab?token=b8ed8b9e541406eb4ee578cff02b4d7424fc44fb97025a6e
+[I 2025-11-24 16:58:06.083 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 2025-11-24 16:58:06.101 ServerApp] No web browser found: Error('could not locate runnable browser').
+[C 2025-11-24 16:58:06.101 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/compiling-ganesh/24m0797/.local/share/jupyter/runtime/jpserver-19198-open.html
+    Or copy and paste one of these URLs:
+        http://cn40-l40.prajna.iitb.ac.in:8888/lab?token=b8ed8b9e541406eb4ee578cff02b4d7424fc44fb97025a6e
+        http://127.0.0.1:8888/lab?token=b8ed8b9e541406eb4ee578cff02b4d7424fc44fb97025a6e
+[I 2025-11-24 16:58:06.133 ServerApp] Skipped non-installed server(s): basedpyright, bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyrefly, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[W 2025-11-24 16:59:23.212 ServerApp] 404 GET /api/kernels/e184b09b-2694-4e97-ac78-71855bda2096?1763983680935 (192.168.1.108): Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096
+[W 2025-11-24 16:59:23.212 ServerApp] wrote error: 'Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096)
+[W 2025-11-24 16:59:23.249 ServerApp] 404 GET /api/kernels/e184b09b-2694-4e97-ac78-71855bda2096?1763983680935 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 37.26ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 16:59:24.174 ServerApp] 404 GET /api/kernels/e184b09b-2694-4e97-ac78-71855bda2096/channels?session_id=5aad1d3d-21f2-4162-ada6-45984c1de46b (192.168.1.108): Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096
+[W 2025-11-24 16:59:24.285 ServerApp] 404 GET /api/kernels/e184b09b-2694-4e97-ac78-71855bda2096/channels?session_id=5aad1d3d-21f2-4162-ada6-45984c1de46b (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 111.16ms referer=None
+[W 2025-11-24 16:59:24.355 ServerApp] 404 GET /api/kernels/e184b09b-2694-4e97-ac78-71855bda2096?1763983682160 (192.168.1.108): Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096
+[W 2025-11-24 16:59:24.355 ServerApp] wrote error: 'Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096)
+[W 2025-11-24 16:59:24.356 ServerApp] 404 GET /api/kernels/e184b09b-2694-4e97-ac78-71855bda2096?1763983682160 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 0.92ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 16:59:27.286 ServerApp] 404 GET /api/kernels/e184b09b-2694-4e97-ac78-71855bda2096/channels?session_id=5aad1d3d-21f2-4162-ada6-45984c1de46b (192.168.1.108): Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096
+[W 2025-11-24 16:59:27.286 ServerApp] 404 GET /api/kernels/e184b09b-2694-4e97-ac78-71855bda2096/channels?session_id=5aad1d3d-21f2-4162-ada6-45984c1de46b (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 0.69ms referer=None
+[W 2025-11-24 16:59:27.357 ServerApp] 404 GET /api/kernels/e184b09b-2694-4e97-ac78-71855bda2096?1763983685161 (192.168.1.108): Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096
+[W 2025-11-24 16:59:27.357 ServerApp] wrote error: 'Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: e184b09b-2694-4e97-ac78-71855bda2096)
+[W 2025-11-24 16:59:27.357 ServerApp] 404 GET /api/kernels/e184b09b-2694-4e97-ac78-71855bda2096?1763983685161 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 0.91ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 16:59:30.070 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2025-11-24 16:59:33.228 ServerApp] Notebook notebooks/translation.ipynb is not trusted
+[I 2025-11-24 16:59:35.804 ServerApp] Kernel started: a945ecf6-330f-4ef9-aa2b-e5cf2026508f
+[I 2025-11-24 16:59:35.806 ServerApp] Kernel started: 56cb5c12-6ef2-4450-aa80-8829dab478d0
+[I 2025-11-24 16:59:35.817 ServerApp] Kernel started: 82e41c16-e779-4b17-b5fa-14e148b90413
+[I 2025-11-24 16:59:37.875 ServerApp] Connecting to kernel a945ecf6-330f-4ef9-aa2b-e5cf2026508f.
+[W 2025-11-24 16:59:37.876 ServerApp] The websocket_ping_timeout (90000) cannot be longer than the websocket_ping_interval (30000).
+    Setting websocket_ping_timeout=30000
+[I 2025-11-24 16:59:38.046 ServerApp] Connecting to kernel 56cb5c12-6ef2-4450-aa80-8829dab478d0.
+[I 2025-11-24 16:59:38.054 ServerApp] Connecting to kernel 82e41c16-e779-4b17-b5fa-14e148b90413.
+[I 2025-11-24 17:00:45.446 ServerApp] Connecting to kernel 82e41c16-e779-4b17-b5fa-14e148b90413.
+[I 2025-11-24 17:00:54.357 ServerApp] Creating new notebook in /notebooks
+[I 2025-11-24 17:00:56.736 ServerApp] Kernel started: 9672749c-ed82-4392-a845-954e17b309a5
+[I 2025-11-24 17:00:57.318 ServerApp] Connecting to kernel 9672749c-ed82-4392-a845-954e17b309a5.
+[I 2025-11-24 17:03:24.153 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 17:11:27.205 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 17:13:28.160 ServerApp] Saving file at /notebooks/layout.ipynb
+[W 2025-11-24 17:15:57.320 ServerApp] WebSocket ping timeout after 119870 ms.
+[I 2025-11-24 17:16:02.323 ServerApp] Starting buffering for 9672749c-ed82-4392-a845-954e17b309a5:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[W 2025-11-24 17:16:07.878 ServerApp] WebSocket ping timeout after 119880 ms.
+[W 2025-11-24 17:16:08.047 ServerApp] WebSocket ping timeout after 119912 ms.
+[W 2025-11-24 17:16:08.054 ServerApp] WebSocket ping timeout after 119920 ms.
+[I 2025-11-24 17:16:12.880 ServerApp] Starting buffering for a945ecf6-330f-4ef9-aa2b-e5cf2026508f:aacb15a6-8606-4a22-925a-4ad30a603464
+[I 2025-11-24 17:16:13.047 ServerApp] Starting buffering for 56cb5c12-6ef2-4450-aa80-8829dab478d0:d1ba8082-eba4-4994-98c5-a90ba695566c
+[I 2025-11-24 17:16:13.055 ServerApp] Starting buffering for 82e41c16-e779-4b17-b5fa-14e148b90413:487abda7-7d66-4e78-aae8-57b91a15f9ae
+[I 2025-11-24 17:30:31.615 ServerApp] Connecting to kernel 9672749c-ed82-4392-a845-954e17b309a5.
+[I 2025-11-24 17:30:31.615 ServerApp] Restoring connection for 9672749c-ed82-4392-a845-954e17b309a5:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[I 2025-11-24 17:30:36.608 ServerApp] Connecting to kernel 82e41c16-e779-4b17-b5fa-14e148b90413.
+[I 2025-11-24 17:30:36.608 ServerApp] Restoring connection for 82e41c16-e779-4b17-b5fa-14e148b90413:487abda7-7d66-4e78-aae8-57b91a15f9ae
+[I 2025-11-24 17:30:37.621 ServerApp] Connecting to kernel 56cb5c12-6ef2-4450-aa80-8829dab478d0.
+[I 2025-11-24 17:30:37.621 ServerApp] Restoring connection for 56cb5c12-6ef2-4450-aa80-8829dab478d0:d1ba8082-eba4-4994-98c5-a90ba695566c
+[I 2025-11-24 17:30:40.619 ServerApp] Connecting to kernel a945ecf6-330f-4ef9-aa2b-e5cf2026508f.
+[I 2025-11-24 17:30:40.619 ServerApp] Restoring connection for a945ecf6-330f-4ef9-aa2b-e5cf2026508f:aacb15a6-8606-4a22-925a-4ad30a603464
+[I 2025-11-24 17:44:48.650 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 17:44:51.955 ServerApp] Kernel restarted: 9672749c-ed82-4392-a845-954e17b309a5
+[I 2025-11-24 17:44:52.183 ServerApp] Starting buffering for 9672749c-ed82-4392-a845-954e17b309a5:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[I 2025-11-24 17:44:52.266 ServerApp] Connecting to kernel 9672749c-ed82-4392-a845-954e17b309a5.
+[I 2025-11-24 17:44:52.266 ServerApp] Restoring connection for 9672749c-ed82-4392-a845-954e17b309a5:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[I 2025-11-24 17:45:12.268 ServerApp] Kernel started: 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c
+[I 2025-11-24 17:45:12.268 ServerApp] Kernel shutdown: 9672749c-ed82-4392-a845-954e17b309a5
+[I 2025-11-24 17:45:12.515 ServerApp] Starting buffering for 9672749c-ed82-4392-a845-954e17b309a5:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[I 2025-11-24 17:45:13.136 ServerApp] Connecting to kernel 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c.
+[I 2025-11-24 17:45:26.426 ServerApp] Kernel interrupted: 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c
+[I 2025-11-24 17:45:31.275 ServerApp] Kernel restarted: 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c
+[I 2025-11-24 17:45:31.338 ServerApp] Starting buffering for 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[I 2025-11-24 17:45:31.426 ServerApp] Connecting to kernel 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c.
+[I 2025-11-24 17:45:31.426 ServerApp] Restoring connection for 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[I 2025-11-24 17:46:49.649 ServerApp] Saving file at /notebooks/layout.ipynb
+[W 2025-11-24 18:01:36.608 ServerApp] WebSocket ping timeout after 119935 ms.
+[W 2025-11-24 18:01:37.622 ServerApp] WebSocket ping timeout after 119857 ms.
+[W 2025-11-24 18:01:40.620 ServerApp] WebSocket ping timeout after 119935 ms.
+[I 2025-11-24 18:01:41.610 ServerApp] Starting buffering for 82e41c16-e779-4b17-b5fa-14e148b90413:487abda7-7d66-4e78-aae8-57b91a15f9ae
+[I 2025-11-24 18:01:42.625 ServerApp] Starting buffering for 56cb5c12-6ef2-4450-aa80-8829dab478d0:d1ba8082-eba4-4994-98c5-a90ba695566c
+[I 2025-11-24 18:01:45.621 ServerApp] Starting buffering for a945ecf6-330f-4ef9-aa2b-e5cf2026508f:aacb15a6-8606-4a22-925a-4ad30a603464
+[W 2025-11-24 18:02:01.427 ServerApp] WebSocket ping timeout after 119772 ms.
+[I 2025-11-24 18:02:06.428 ServerApp] Starting buffering for 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[I 2025-11-24 18:05:28.562 ServerApp] Connecting to kernel 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c.
+[I 2025-11-24 18:05:28.562 ServerApp] Restoring connection for 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[I 2025-11-24 18:05:29.627 ServerApp] Connecting to kernel a945ecf6-330f-4ef9-aa2b-e5cf2026508f.
+[I 2025-11-24 18:05:29.627 ServerApp] Restoring connection for a945ecf6-330f-4ef9-aa2b-e5cf2026508f:aacb15a6-8606-4a22-925a-4ad30a603464
+[I 2025-11-24 18:05:36.973 ServerApp] Connecting to kernel 56cb5c12-6ef2-4450-aa80-8829dab478d0.
+[I 2025-11-24 18:05:36.973 ServerApp] Restoring connection for 56cb5c12-6ef2-4450-aa80-8829dab478d0:d1ba8082-eba4-4994-98c5-a90ba695566c
+[I 2025-11-24 18:05:40.930 ServerApp] Connecting to kernel 82e41c16-e779-4b17-b5fa-14e148b90413.
+[I 2025-11-24 18:05:40.930 ServerApp] Restoring connection for 82e41c16-e779-4b17-b5fa-14e148b90413:487abda7-7d66-4e78-aae8-57b91a15f9ae
+[IPKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/kernelbase.py", line 471, in dispatch_shell
+    await result
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/ipkernel.py", line 366, in execute_request
+    await super().execute_request(stream, ident, parent)
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/kernelbase.py", line 850, in execute_request
+    reply_msg: dict[str, t.Any] = self.session.send(  # type:ignore[assignment]
+                                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        stream,
+        ^^^^^^^
+    ...<4 lines>...
+        ident=ident,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_client/session.py", line 863, in send
+    stream.send_multipart(to_send, copy=copy)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/zmq/sugar/socket.py", line 749, in send_multipart
+    self.send(msg, zmq.SNDMORE | flags, copy=copy, track=track)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/zmq/sugar/socket.py", line 698, in send
+    return super().send(data, flags=flags, copy=copy, track=track)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1152, in zmq.backend.cython._zmq.Socket.send
+    def send(self, data, flags=0, copy: bint = True, track: bint = False):
+    ^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1194, in zmq.backend.cython._zmq.Socket.send
+    _check_closed(self)
+    ^^^
+  File "zmq/backend/cython/_zmq.py", line 1339, in zmq.backend.cython._zmq._check_closed
+    raise ZMQError(ENOTSOCK)
+    ^^^
+zmq.error.ZMQError: Socket operation on non-socket
+[IPKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/kernelbase.py", line 471, in dispatch_shell
+    await result
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/kernelbase.py", line 1010, in kernel_info_request
+    msg = self.session.send(stream, "kernel_info_reply", content, parent, ident)
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_client/session.py", line 863, in send
+    stream.send_multipart(to_send, copy=copy)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/zmq/sugar/socket.py", line 749, in send_multipart
+    self.send(msg, zmq.SNDMORE | flags, copy=copy, track=track)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/zmq/sugar/socket.py", line 698, in send
+    return super().send(data, flags=flags, copy=copy, track=track)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1152, in zmq.backend.cython._zmq.Socket.send
+    def send(self, data, flags=0, copy: bint = True, track: bint = False):
+    ^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1194, in zmq.backend.cython._zmq.Socket.send
+    _check_closed(self)
+    ^^^
+  File "zmq/backend/cython/_zmq.py", line 1339, in zmq.backend.cython._zmq._check_closed
+    raise ZMQError(ENOTSOCK)
+    ^^^
+zmq.error.ZMQError: Socket operation on non-socket
+WARNING:tornado.general:Got events for closed stream <zmq.eventloop.zmqstream.ZMQStream object at 0x7f2614129ae0>
+[I 2025-11-24 18:05:53.426 ServerApp] Kernel restarted: 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c
+[I 2025-11-24 18:05:53.574 ServerApp] Starting buffering for 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[I 2025-11-24 18:05:53.642 ServerApp] Connecting to kernel 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c.
+[I 2025-11-24 18:05:53.642 ServerApp] Restoring connection for 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c:2a3fe87f-9c08-4079-8d66-aae475eae0bd
+[I 2025-11-24 18:06:14.187 ServerApp] Kernel shutdown: 8a46cf1b-32db-4c6c-9c77-ee3aec9f637c
+[I 2025-11-24 18:06:17.020 JupyterNotebookApp] 302 GET /tree/notebooks/layout.ipynb (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 0.68ms
+[I 2025-11-24 18:06:54.840 ServerApp] Kernel started: e44cc778-c176-4b55-a5b8-4f51ea74bb18
+[I 2025-11-24 18:06:55.396 ServerApp] Connecting to kernel e44cc778-c176-4b55-a5b8-4f51ea74bb18.
+[I 2025-11-24 18:07:09.850 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 18:09:10.091 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 18:11:10.338 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 18:15:18.875 ServerApp] Starting buffering for e44cc778-c176-4b55-a5b8-4f51ea74bb18:f93280b9-b2bf-4714-a862-d51d1eb1ed64
+[I 2025-11-24 18:15:18.876 ServerApp] Starting buffering for 82e41c16-e779-4b17-b5fa-14e148b90413:487abda7-7d66-4e78-aae8-57b91a15f9ae
+[I 2025-11-24 18:15:18.876 ServerApp] Starting buffering for 56cb5c12-6ef2-4450-aa80-8829dab478d0:d1ba8082-eba4-4994-98c5-a90ba695566c
+[I 2025-11-24 18:15:18.876 ServerApp] Starting buffering for a945ecf6-330f-4ef9-aa2b-e5cf2026508f:aacb15a6-8606-4a22-925a-4ad30a603464
+[I 2025-11-24 20:38:44.577 ServerApp] Connecting to kernel 82e41c16-e779-4b17-b5fa-14e148b90413.
+[I 2025-11-24 20:38:44.607 ServerApp] Restoring connection for 82e41c16-e779-4b17-b5fa-14e148b90413:487abda7-7d66-4e78-aae8-57b91a15f9ae
+[I 2025-11-24 20:38:45.766 ServerApp] Connecting to kernel e44cc778-c176-4b55-a5b8-4f51ea74bb18.
+[I 2025-11-24 20:38:45.766 ServerApp] Restoring connection for e44cc778-c176-4b55-a5b8-4f51ea74bb18:f93280b9-b2bf-4714-a862-d51d1eb1ed64
+[I 2025-11-24 20:38:46.792 ServerApp] Starting buffering for 82e41c16-e779-4b17-b5fa-14e148b90413:487abda7-7d66-4e78-aae8-57b91a15f9ae
+[I 2025-11-24 20:38:46.809 ServerApp] Starting buffering for e44cc778-c176-4b55-a5b8-4f51ea74bb18:f93280b9-b2bf-4714-a862-d51d1eb1ed64
+[W 2025-11-24 20:38:49.677 LabApp] Could not determine jupyterlab build status without nodejs
+[I 2025-11-24 20:38:49.811 ServerApp] Connecting to kernel a945ecf6-330f-4ef9-aa2b-e5cf2026508f.
+[I 2025-11-24 20:38:49.944 ServerApp] Connecting to kernel 56cb5c12-6ef2-4450-aa80-8829dab478d0.
+[W 2025-11-24 20:38:49.951 ServerApp] 404 GET /api/contents/notebooks/Untitled.ipynb?content=0&hash=0&1763996847375 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 0.90ms referer=http://localhost:8888/lab/tree/notebooks/layout.ipynb
+[W 2025-11-24 20:38:49.952 ServerApp] 404 GET /api/contents/notebooks/Untitled.ipynb?content=0&hash=0&1763996847375 (192.168.1.108): No such file or directory: notebooks/Untitled.ipynb
+[I 2025-11-24 20:38:49.966 ServerApp] Starting buffering for a945ecf6-330f-4ef9-aa2b-e5cf2026508f:1a3057af-8da5-43e0-9dea-3decd7947bd3
+[I 2025-11-24 20:38:50.069 ServerApp] Starting buffering for 56cb5c12-6ef2-4450-aa80-8829dab478d0:e1b1bf22-f45b-4def-969d-c9ae26f9e313
+[I 2025-11-24 20:38:50.069 ServerApp] Connecting to kernel 82e41c16-e779-4b17-b5fa-14e148b90413.
+[I 2025-11-24 20:38:50.079 ServerApp] Connecting to kernel e44cc778-c176-4b55-a5b8-4f51ea74bb18.
+[I 2025-11-24 20:38:50.277 ServerApp] Starting buffering for 82e41c16-e779-4b17-b5fa-14e148b90413:f1d49dfd-1516-4da3-8f45-ee48b0d7fed4
+[I 2025-11-24 20:38:50.277 ServerApp] Starting buffering for e44cc778-c176-4b55-a5b8-4f51ea74bb18:c43168ea-5d43-4863-b310-2e18ce97a745
+[W 2025-11-24 20:38:50.389 ServerApp] Notebook notebooks/translation.ipynb is not trusted
+[I 2025-11-24 20:38:51.377 ServerApp] Connecting to kernel 56cb5c12-6ef2-4450-aa80-8829dab478d0.
+[I 2025-11-24 20:38:51.509 ServerApp] Connecting to kernel a945ecf6-330f-4ef9-aa2b-e5cf2026508f.
+[I 2025-11-24 20:38:51.645 ServerApp] Connecting to kernel e44cc778-c176-4b55-a5b8-4f51ea74bb18.
+[I 2025-11-24 20:38:51.681 ServerApp] Connecting to kernel 82e41c16-e779-4b17-b5fa-14e148b90413.
+[I 2025-11-24 20:40:50.720 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 20:44:51.077 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 20:46:51.616 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 20:48:27.201 ServerApp] Kernel restarted: e44cc778-c176-4b55-a5b8-4f51ea74bb18
+[I 2025-11-24 20:48:27.266 ServerApp] Starting buffering for e44cc778-c176-4b55-a5b8-4f51ea74bb18:c7e5d1f2-08e1-428b-9a9d-73f0fdbe8848
+[I 2025-11-24 20:48:27.349 ServerApp] Connecting to kernel e44cc778-c176-4b55-a5b8-4f51ea74bb18.
+[I 2025-11-24 20:48:27.349 ServerApp] Restoring connection for e44cc778-c176-4b55-a5b8-4f51ea74bb18:c7e5d1f2-08e1-428b-9a9d-73f0fdbe8848
+[W 2025-11-24 20:48:31.855 ServerApp] Nudge: attempt 10 on kernel e44cc778-c176-4b55-a5b8-4f51ea74bb18
+[W 2025-11-24 20:48:36.863 ServerApp] Nudge: attempt 20 on kernel e44cc778-c176-4b55-a5b8-4f51ea74bb18
+[I 2025-11-24 20:48:51.886 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 20:50:52.282 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 20:52:52.745 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 20:54:53.027 ServerApp] Saving file at /notebooks/layout.ipynb
+slurmstepd: error: *** JOB 40114 ON cn40-l40 CANCELLED AT 2025-11-24T20:58:04 DUE TO TIME LIMIT ***

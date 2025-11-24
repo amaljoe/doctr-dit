@@ -1,0 +1,168 @@
+cn46-l40.prajna.iitb.ac.in
+Mon Nov 24 20:58:48 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    Off |   00000000:3F:00.0 Off |                    0 |
+| N/A   34C    P0             83W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA L40S                    Off |   00000000:40:00.0 Off |                    0 |
+| N/A   38C    P0             83W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA L40S                    Off |   00000000:AD:00.0 Off |                    0 |
+| N/A   39C    P0             86W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA L40S                    Off |   00000000:AE:00.0 Off |                    0 |
+| N/A   38C    P0             83W /  350W |       1MiB /  46068MiB |      1%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+/scratch/slurm_conf/spool/slurm/d/job40194/slurm_script: line 17: cd: workspace/doctr-dit/: No such file or directory
+[I 2025-11-24 20:59:05.904 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2025-11-24 20:59:05.907 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2025-11-24 20:59:05.910 ServerApp] jupyterlab | extension was successfully linked.
+[I 2025-11-24 20:59:05.912 ServerApp] notebook | extension was successfully linked.
+[I 2025-11-24 20:59:09.712 ServerApp] notebook_shim | extension was successfully linked.
+[I 2025-11-24 20:59:09.923 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2025-11-24 20:59:09.925 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2025-11-24 20:59:09.926 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2025-11-24 20:59:09.936 LabApp] JupyterLab extension loaded from /home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyterlab
+[I 2025-11-24 20:59:09.936 LabApp] JupyterLab application directory is /home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/share/jupyter/lab
+[I 2025-11-24 20:59:09.937 LabApp] Extension Manager is 'pypi'.
+[I 2025-11-24 20:59:10.337 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2025-11-24 20:59:10.342 ServerApp] notebook | extension was successfully loaded.
+[I 2025-11-24 20:59:10.342 ServerApp] Serving notebooks from local directory: /home/compiling-ganesh/24m0797/workspace/doctr-dit
+[I 2025-11-24 20:59:10.342 ServerApp] Jupyter Server 2.17.0 is running at:
+[I 2025-11-24 20:59:10.342 ServerApp] http://cn46-l40.prajna.iitb.ac.in:8888/lab?token=4695c9285056b1a23ac13e69dbbfd66ba22a06f5058bba8b
+[I 2025-11-24 20:59:10.342 ServerApp]     http://127.0.0.1:8888/lab?token=4695c9285056b1a23ac13e69dbbfd66ba22a06f5058bba8b
+[I 2025-11-24 20:59:10.342 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 2025-11-24 20:59:10.371 ServerApp] No web browser found: Error('could not locate runnable browser').
+[C 2025-11-24 20:59:10.371 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/compiling-ganesh/24m0797/.local/share/jupyter/runtime/jpserver-3049742-open.html
+    Or copy and paste one of these URLs:
+        http://cn46-l40.prajna.iitb.ac.in:8888/lab?token=4695c9285056b1a23ac13e69dbbfd66ba22a06f5058bba8b
+        http://127.0.0.1:8888/lab?token=4695c9285056b1a23ac13e69dbbfd66ba22a06f5058bba8b
+[I 2025-11-24 20:59:10.413 ServerApp] Skipped non-installed server(s): basedpyright, bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyrefly, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[W 2025-11-24 20:59:11.615 ServerApp] 404 GET /api/kernels/a945ecf6-330f-4ef9-aa2b-e5cf2026508f?1763998111969 (192.168.1.108): Kernel does not exist: a945ecf6-330f-4ef9-aa2b-e5cf2026508f
+[W 2025-11-24 20:59:11.616 ServerApp] wrote error: 'Kernel does not exist: a945ecf6-330f-4ef9-aa2b-e5cf2026508f'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: a945ecf6-330f-4ef9-aa2b-e5cf2026508f)
+[W 2025-11-24 20:59:11.639 ServerApp] 404 GET /api/kernels/a945ecf6-330f-4ef9-aa2b-e5cf2026508f?1763998111969 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 24.30ms referer=http://localhost:8888/lab/tree/notebooks/layout.ipynb
+[W 2025-11-24 20:59:11.640 ServerApp] 404 GET /api/kernels/82e41c16-e779-4b17-b5fa-14e148b90413?1763998111968 (192.168.1.108): Kernel does not exist: 82e41c16-e779-4b17-b5fa-14e148b90413
+[W 2025-11-24 20:59:11.640 ServerApp] wrote error: 'Kernel does not exist: 82e41c16-e779-4b17-b5fa-14e148b90413'
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/handlers.py", line 75, in get
+        model = await ensure_async(km.kernel_model(kernel_id))
+                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 513, in kernel_model
+        self._check_kernel_id(kernel_id)
+        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/kernels/kernelmanager.py", line 544, in _check_kernel_id
+        raise web.HTTPError(404, "Kernel does not exist: %s" % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: 82e41c16-e779-4b17-b5fa-14e148b90413)
+[W 2025-11-24 20:59:11.640 ServerApp] 404 GET /api/kernels/82e41c16-e779-4b17-b5fa-14e148b90413?1763998111968 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 25.09ms referer=http://localhost:8888/lab/tree/notebooks/layout.ipynb
+[W 2025-11-24 20:59:13.381 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2025-11-24 20:59:16.467 ServerApp] Notebook notebooks/translation.ipynb is not trusted
+[I 2025-11-24 20:59:17.582 ServerApp] Kernel started: 9024347c-6907-4579-bdf7-c2b5834b1404
+[I 2025-11-24 20:59:17.592 ServerApp] Kernel started: 1888962d-d828-43c2-b6f5-a101b86556a6
+[I 2025-11-24 20:59:17.593 ServerApp] Kernel started: 19ac5b5c-a3f9-4857-becb-eddf0c2519ba
+[I 2025-11-24 20:59:17.597 ServerApp] Kernel started: 47bef070-1fb6-4557-b23f-f6db7d66dc6b
+[I 2025-11-24 20:59:19.719 ServerApp] Connecting to kernel 9024347c-6907-4579-bdf7-c2b5834b1404.
+[W 2025-11-24 20:59:19.720 ServerApp] The websocket_ping_timeout (90000) cannot be longer than the websocket_ping_interval (30000).
+    Setting websocket_ping_timeout=30000
+[I 2025-11-24 20:59:19.884 ServerApp] Connecting to kernel 47bef070-1fb6-4557-b23f-f6db7d66dc6b.
+[I 2025-11-24 20:59:19.885 ServerApp] Connecting to kernel 47bef070-1fb6-4557-b23f-f6db7d66dc6b.
+[I 2025-11-24 20:59:20.024 ServerApp] Connecting to kernel 19ac5b5c-a3f9-4857-becb-eddf0c2519ba.
+[I 2025-11-24 20:59:20.034 ServerApp] Connecting to kernel 1888962d-d828-43c2-b6f5-a101b86556a6.
+[I 2025-11-24 20:59:20.164 ServerApp] Connecting to kernel 47bef070-1fb6-4557-b23f-f6db7d66dc6b.
+[I 2025-11-24 21:01:16.989 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 21:03:17.516 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 21:05:18.524 ServerApp] Saving file at /notebooks/layout.ipynb
+[W 2025-11-24 21:07:12.649 ServerApp] 404 GET /api/contents/notebooks/data/funsd/data/train-00000-of-00001.parquet?content=0&hash=0&1763998593147 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 0.91ms referer=http://localhost:8888/lab/tree/notebooks/layout.ipynb
+[W 2025-11-24 21:07:12.649 ServerApp] 404 GET /api/contents/notebooks/data/funsd/data/train-00000-of-00001.parquet?content=0&hash=0&1763998593147 (192.168.1.108): No such file or directory: notebooks/data/funsd/data/train-00000-of-00001.parquet
+[W 2025-11-24 21:07:15.452 ServerApp] 404 GET /api/contents/notebooks/data/funsd/data/train-00000-of-00001.parquet?content=0&hash=0&1763998595949 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 0.81ms referer=http://localhost:8888/lab/tree/notebooks/layout.ipynb
+[W 2025-11-24 21:07:15.452 ServerApp] 404 GET /api/contents/notebooks/data/funsd/data/train-00000-of-00001.parquet?content=0&hash=0&1763998595949 (192.168.1.108): No such file or directory: notebooks/data/funsd/data/train-00000-of-00001.parquet
+[I 2025-11-24 21:07:18.863 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 21:09:20.087 ServerApp] Starting buffering for 19ac5b5c-a3f9-4857-becb-eddf0c2519ba:e4cc7753-e192-45bd-a248-8d4c754992d3
+[I 2025-11-24 21:09:20.088 ServerApp] Starting buffering for 1888962d-d828-43c2-b6f5-a101b86556a6:b1fc1c44-5890-4a08-89dd-ff07c8518582
+[I 2025-11-24 21:09:20.088 ServerApp] Starting buffering for 47bef070-1fb6-4557-b23f-f6db7d66dc6b:3e2f53cb-2a44-4d68-b7bc-4d79775ffd01
+[I 2025-11-24 21:09:20.088 ServerApp] Starting buffering for 9024347c-6907-4579-bdf7-c2b5834b1404:14f35afa-03aa-4710-b02e-fdde0b20d0f1
+[I 2025-11-24 21:55:32.254 ServerApp] Connecting to kernel 9024347c-6907-4579-bdf7-c2b5834b1404.
+[I 2025-11-24 21:55:32.254 ServerApp] Restoring connection for 9024347c-6907-4579-bdf7-c2b5834b1404:14f35afa-03aa-4710-b02e-fdde0b20d0f1
+[I 2025-11-24 21:55:33.206 ServerApp] Connecting to kernel 19ac5b5c-a3f9-4857-becb-eddf0c2519ba.
+[I 2025-11-24 21:55:33.206 ServerApp] Restoring connection for 19ac5b5c-a3f9-4857-becb-eddf0c2519ba:e4cc7753-e192-45bd-a248-8d4c754992d3
+[I 2025-11-24 21:55:37.140 ServerApp] Connecting to kernel 1888962d-d828-43c2-b6f5-a101b86556a6.
+[I 2025-11-24 21:55:37.141 ServerApp] Restoring connection for 1888962d-d828-43c2-b6f5-a101b86556a6:b1fc1c44-5890-4a08-89dd-ff07c8518582
+[I 2025-11-24 21:55:39.744 ServerApp] Connecting to kernel 47bef070-1fb6-4557-b23f-f6db7d66dc6b.
+[I 2025-11-24 21:55:39.744 ServerApp] Restoring connection for 47bef070-1fb6-4557-b23f-f6db7d66dc6b:3e2f53cb-2a44-4d68-b7bc-4d79775ffd01
+[I 2025-11-24 21:56:44.956 ServerApp] Kernel restarted: 1888962d-d828-43c2-b6f5-a101b86556a6
+[I 2025-11-24 21:56:45.005 ServerApp] Starting buffering for 1888962d-d828-43c2-b6f5-a101b86556a6:b1fc1c44-5890-4a08-89dd-ff07c8518582
+[I 2025-11-24 21:56:45.076 ServerApp] Connecting to kernel 1888962d-d828-43c2-b6f5-a101b86556a6.
+[I 2025-11-24 21:56:45.076 ServerApp] Restoring connection for 1888962d-d828-43c2-b6f5-a101b86556a6:b1fc1c44-5890-4a08-89dd-ff07c8518582
+[I 2025-11-24 21:57:22.270 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 21:57:22.350 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 21:59:22.828 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:01:23.263 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:03:23.740 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:05:24.241 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:07:24.759 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:09:25.451 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[W 2025-11-24 22:11:02.215 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[I 2025-11-24 22:11:26.045 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:12:32.741 ServerApp] Kernel interrupted: 1888962d-d828-43c2-b6f5-a101b86556a6
+[W 2025-11-24 22:12:33.432 ServerApp] iopub messages resumed
+[I 2025-11-24 22:13:26.512 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:15:26.969 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:17:27.436 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:19:27.830 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:21:28.230 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:23:28.621 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:27:29.144 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:27:55.300 ServerApp] Kernel interrupted: 1888962d-d828-43c2-b6f5-a101b86556a6
+[I 2025-11-24 22:29:29.784 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:31:30.203 ServerApp] Saving file at /notebooks/evaluate.ipynb
