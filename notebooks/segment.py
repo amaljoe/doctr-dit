@@ -225,7 +225,7 @@ def update_docs_with_ocr(items, docs, model):
             segment['segment_id'] = i
         doc['segments'] = segments
         doc['image_path'] = img
-        labels = [-1 for _ in range(len(boxes))]
+        labels = [-100 for _ in range(len(boxes))]
         for i, box in enumerate(boxes):
             child = {
                 'x_min': box[0],

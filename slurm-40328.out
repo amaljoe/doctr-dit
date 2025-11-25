@@ -6738,3 +6738,257 @@ KeyboardInterrupt
         raise RuntimeError("Cannot write() after finish()")
     RuntimeError: Cannot write() after finish()
 [I 2025-11-25 11:36:38.134 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 11:38:38.382 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 11:40:38.636 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 11:42:39.099 ServerApp] Saving file at /notebooks/layout.ipynb
+[W 2025-11-25 11:42:47.656 ServerApp] 404 GET /api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051083671 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.66ms referer=http://localhost:8888/lab/tree/notebooks/segment.py
+[I 2025-11-25 11:42:47.657 ServerApp] Refusing to serve hidden file or directory '/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py', via 404 Error
+[E 2025-11-25 11:42:47.657 ServerApp] Uncaught exception GET /api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051083671 (192.168.1.109)
+    HTTPServerRequest(protocol='http', host='localhost:8888', method='GET', uri='/api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051083671', version='HTTP/1.1', remote_ip='192.168.1.109')
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 156, in get
+        model = await ensure_async(
+                ^^^^^^^^^^^^^^^^^^^
+        ...<7 lines>...
+        )
+        ^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 214, in ensure_async
+        result = await obj
+                 ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 928, in get
+        model = await self._file_model(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+            path, content=content, format=format, require_hash=require_hash
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 829, in _file_model
+        model = self._base_model(path)
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 237, in _base_model
+        raise web.HTTPError(404, four_o_four)
+    tornado.web.HTTPError: HTTP 404: Not Found (file or directory does not exist: '.venv/lib/python3.13/site-packages/transformers/modeling_utils.py')
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 182, in get
+        await self._finish_error(
+            HTTPStatus.NOT_FOUND, f"file or directory {path!r} does not exist"
+        )
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 114, in _finish_error
+        self.write(message)
+        ~~~~~~~~~~^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 964, in write
+        raise RuntimeError("Cannot write() after finish()")
+    RuntimeError: Cannot write() after finish()
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:245: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [112,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:245: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [51,0,0] Assertion `t >= 0 && t < n_classes` failed.
+[W 2025-11-25 11:42:48.033 ServerApp] 404 GET /api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051084072 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.54ms referer=http://localhost:8888/lab/tree/notebooks/segment.py
+[I 2025-11-25 11:42:48.033 ServerApp] Refusing to serve hidden file or directory '/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py', via 404 Error
+[E 2025-11-25 11:42:48.033 ServerApp] Uncaught exception GET /api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051084072 (192.168.1.109)
+    HTTPServerRequest(protocol='http', host='localhost:8888', method='GET', uri='/api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051084072', version='HTTP/1.1', remote_ip='192.168.1.109')
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 156, in get
+        model = await ensure_async(
+                ^^^^^^^^^^^^^^^^^^^
+        ...<7 lines>...
+        )
+        ^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 214, in ensure_async
+        result = await obj
+                 ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 928, in get
+        model = await self._file_model(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+            path, content=content, format=format, require_hash=require_hash
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 829, in _file_model
+        model = self._base_model(path)
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 237, in _base_model
+        raise web.HTTPError(404, four_o_four)
+    tornado.web.HTTPError: HTTP 404: Not Found (file or directory does not exist: '.venv/lib/python3.13/site-packages/transformers/modeling_utils.py')
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 182, in get
+        await self._finish_error(
+            HTTPStatus.NOT_FOUND, f"file or directory {path!r} does not exist"
+        )
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 114, in _finish_error
+        self.write(message)
+        ~~~~~~~~~~^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 964, in write
+        raise RuntimeError("Cannot write() after finish()")
+    RuntimeError: Cannot write() after finish()
+[I 2025-11-25 11:44:40.044 ServerApp] Saving file at /notebooks/layout.ipynb
+[W 2025-11-25 11:45:30.475 ServerApp] 404 GET /api/contents/data/cache/ocr_docs.pkl?content=0&hash=0&1764051246502 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.76ms referer=http://localhost:8888/lab/tree/notebooks/segment.py
+[W 2025-11-25 11:45:30.475 ServerApp] 404 GET /api/contents/data/cache/ocr_docs.pkl?content=0&hash=0&1764051246502 (192.168.1.109): No such file or directory: data/cache/ocr_docs.pkl
+[I 2025-11-25 11:46:40.701 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 11:47:23.899 ServerApp] Kernel restarted: bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b
+[I 2025-11-25 11:47:23.964 ServerApp] Starting buffering for bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b:af9cbd0b-428e-405a-bf2f-cc6637e67e5a
+[I 2025-11-25 11:47:24.036 ServerApp] Connecting to kernel bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b.
+[I 2025-11-25 11:47:24.036 ServerApp] Restoring connection for bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b:af9cbd0b-428e-405a-bf2f-cc6637e67e5a
+[W 2025-11-25 11:47:28.544 ServerApp] Nudge: attempt 10 on kernel bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b
+[W 2025-11-25 11:47:33.701 ServerApp] Nudge: attempt 20 on kernel bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b
+[I 2025-11-25 11:48:41.923 ServerApp] Saving file at /notebooks/layout.ipynb
+[IPKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/kernelbase.py", line 471, in dispatch_shell
+    await result
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/ipkernel.py", line 366, in execute_request
+    await super().execute_request(stream, ident, parent)
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/ipykernel/kernelbase.py", line 850, in execute_request
+    reply_msg: dict[str, t.Any] = self.session.send(  # type:ignore[assignment]
+                                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        stream,
+        ^^^^^^^
+    ...<4 lines>...
+        ident=ident,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_client/session.py", line 863, in send
+    stream.send_multipart(to_send, copy=copy)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/zmq/sugar/socket.py", line 749, in send_multipart
+    self.send(msg, zmq.SNDMORE | flags, copy=copy, track=track)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/zmq/sugar/socket.py", line 698, in send
+    return super().send(data, flags=flags, copy=copy, track=track)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1152, in zmq.backend.cython._zmq.Socket.send
+    def send(self, data, flags=0, copy: bint = True, track: bint = False):
+    ^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1194, in zmq.backend.cython._zmq.Socket.send
+    _check_closed(self)
+    ^^^
+  File "zmq/backend/cython/_zmq.py", line 1339, in zmq.backend.cython._zmq._check_closed
+    raise ZMQError(ENOTSOCK)
+    ^^^
+zmq.error.ZMQError: Socket operation on non-socket
+[I 2025-11-25 11:50:10.098 ServerApp] Kernel restarted: bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b
+[I 2025-11-25 11:50:10.160 ServerApp] Starting buffering for bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b:af9cbd0b-428e-405a-bf2f-cc6637e67e5a
+[I 2025-11-25 11:50:10.229 ServerApp] Connecting to kernel bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b.
+[I 2025-11-25 11:50:10.229 ServerApp] Restoring connection for bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b:af9cbd0b-428e-405a-bf2f-cc6637e67e5a
+[I 2025-11-25 11:50:21.167 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 11:50:21.491 ServerApp] Kernel restarted: bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b
+[I 2025-11-25 11:50:21.553 ServerApp] Starting buffering for bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b:af9cbd0b-428e-405a-bf2f-cc6637e67e5a
+[I 2025-11-25 11:50:21.612 ServerApp] Connecting to kernel bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b.
+[I 2025-11-25 11:50:21.613 ServerApp] Restoring connection for bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b:af9cbd0b-428e-405a-bf2f-cc6637e67e5a
+[I 2025-11-25 11:52:21.677 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 11:52:37.474 ServerApp] Kernel restarted: bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b
+[I 2025-11-25 11:52:37.595 ServerApp] Starting buffering for bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b:af9cbd0b-428e-405a-bf2f-cc6637e67e5a
+[I 2025-11-25 11:52:37.917 ServerApp] Connecting to kernel bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b.
+[I 2025-11-25 11:52:37.917 ServerApp] Restoring connection for bb19fb1f-5b2b-4f2a-8e4b-fb65985d7c7b:af9cbd0b-428e-405a-bf2f-cc6637e67e5a
+[I 2025-11-25 11:54:22.003 ServerApp] Saving file at /notebooks/layout.ipynb
+[W 2025-11-25 11:55:29.986 ServerApp] 404 GET /api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051846006 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.63ms referer=http://localhost:8888/lab/tree/notebooks/segment.py
+[I 2025-11-25 11:55:29.987 ServerApp] Refusing to serve hidden file or directory '/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py', via 404 Error
+[E 2025-11-25 11:55:29.987 ServerApp] Uncaught exception GET /api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051846006 (192.168.1.109)
+    HTTPServerRequest(protocol='http', host='localhost:8888', method='GET', uri='/api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051846006', version='HTTP/1.1', remote_ip='192.168.1.109')
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 156, in get
+        model = await ensure_async(
+                ^^^^^^^^^^^^^^^^^^^
+        ...<7 lines>...
+        )
+        ^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 214, in ensure_async
+        result = await obj
+                 ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 928, in get
+        model = await self._file_model(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+            path, content=content, format=format, require_hash=require_hash
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 829, in _file_model
+        model = self._base_model(path)
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 237, in _base_model
+        raise web.HTTPError(404, four_o_four)
+    tornado.web.HTTPError: HTTP 404: Not Found (file or directory does not exist: '.venv/lib/python3.13/site-packages/transformers/modeling_utils.py')
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 182, in get
+        await self._finish_error(
+            HTTPStatus.NOT_FOUND, f"file or directory {path!r} does not exist"
+        )
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 114, in _finish_error
+        self.write(message)
+        ~~~~~~~~~~^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 964, in write
+        raise RuntimeError("Cannot write() after finish()")
+    RuntimeError: Cannot write() after finish()
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:245: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [112,0,0] Assertion `t >= 0 && t < n_classes` failed.
+/pytorch/aten/src/ATen/native/cuda/Loss.cu:245: nll_loss_forward_reduce_cuda_kernel_2d: block: [0,0,0], thread: [51,0,0] Assertion `t >= 0 && t < n_classes` failed.
+[W 2025-11-25 11:55:38.455 ServerApp] 404 GET /api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051854465 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.72ms referer=http://localhost:8888/lab/tree/notebooks/segment.py
+[I 2025-11-25 11:55:38.455 ServerApp] Refusing to serve hidden file or directory '/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py', via 404 Error
+[E 2025-11-25 11:55:38.455 ServerApp] Uncaught exception GET /api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051854465 (192.168.1.109)
+    HTTPServerRequest(protocol='http', host='localhost:8888', method='GET', uri='/api/contents/.venv/lib/python3.13/site-packages/transformers/modeling_utils.py?content=0&hash=0&1764051854465', version='HTTP/1.1', remote_ip='192.168.1.109')
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 156, in get
+        model = await ensure_async(
+                ^^^^^^^^^^^^^^^^^^^
+        ...<7 lines>...
+        )
+        ^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 214, in ensure_async
+        result = await obj
+                 ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 928, in get
+        model = await self._file_model(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+            path, content=content, format=format, require_hash=require_hash
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 829, in _file_model
+        model = self._base_model(path)
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/filemanager.py", line 237, in _base_model
+        raise web.HTTPError(404, four_o_four)
+    tornado.web.HTTPError: HTTP 404: Not Found (file or directory does not exist: '.venv/lib/python3.13/site-packages/transformers/modeling_utils.py')
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 182, in get
+        await self._finish_error(
+            HTTPStatus.NOT_FOUND, f"file or directory {path!r} does not exist"
+        )
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 114, in _finish_error
+        self.write(message)
+        ~~~~~~~~~~^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 964, in write
+        raise RuntimeError("Cannot write() after finish()")
+    RuntimeError: Cannot write() after finish()
+[I 2025-11-25 11:56:22.286 ServerApp] Saving file at /notebooks/layout.ipynb
+slurmstepd: error: *** JOB 40328 ON cn40-l40 CANCELLED AT 2025-11-25T11:58:13 DUE TO TIME LIMIT ***

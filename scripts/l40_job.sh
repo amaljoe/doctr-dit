@@ -10,6 +10,7 @@
 hostname
 nvidia-smi
 
+export WANDB_MODE=offline
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export HF_DATASETS_OFFLINE=1
