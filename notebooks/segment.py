@@ -215,6 +215,7 @@ def update_docs_with_ocr(items, docs, model):
         result = model(file)
         export = result.pages[0].export()
         words, boxes = parse_ocr_output(export)
+        doc['dimensions'] = export['dimensions']
         doc['words'] = words
         doc['boxes'] = boxes
         keys = [k for k in doc['sentences'].keys()]

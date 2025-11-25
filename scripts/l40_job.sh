@@ -13,7 +13,7 @@ nvidia-smi
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export HF_DATASETS_OFFLINE=1
-
+export HF_EVALUATE_OFFLINE=1
 cd workspace/doctr-dit/
 source .venv/bin/activate
 
