@@ -2,6 +2,8 @@ import os
 import json
 from glob import glob
 from PIL import Image
+from tqdm import tqdm
+from doctr.io import DocumentFile
 
 def load_report_with_images(
     json_dir="../data/DITrans-EMNLP/political_report/jsons/",
@@ -152,7 +154,7 @@ def combine_overlapping(sentences):
 
 def get_docs(items):
     docs = []
-    for filename, data, image, _ in items:
+    for filename, data, image, _ in tqdm(items, desc='Constructing documents'):
         sentences = {}
         for obj in data.get("objects", []):
             for sen in obj.get("sentences", []):
@@ -190,6 +192,57 @@ def get_docs(items):
         docs.append({
             "sentences": sentences,
         })
+    return docs
+
+def parse_ocr_output(page):
+    words = []
+    boxes = []
+    h, w = page['dimensions']
+    for block in page['blocks']:
+        for line in block['lines']:
+            for word in line['words']:
+                geometry = word['geometry']
+                x_min, y_min, x_max, y_max = geometry[0][0], geometry[0][1], geometry[1][0], geometry[1][1]
+                x_min, y_min, x_max, y_max = x_min * w, y_min * h, x_max * w, y_max * h
+                words.append(word['value'])
+                boxes.append([x_min, y_min, x_max, y_max])
+    return words, boxes
+
+def update_docs_with_ocr(items, docs, model):
+    for item, doc in tqdm(zip(items, docs), total=len(items), desc='OCR'):
+        img = item[3]
+        file = DocumentFile.from_images(img)
+        result = model(file)
+        export = result.pages[0].export()
+        words, boxes = parse_ocr_output(export)
+        doc['words'] = words
+        doc['boxes'] = boxes
+        keys = [k for k in doc['sentences'].keys()]
+        keys.sort()
+        segments = [doc['sentences'][key] for key in keys]
+        for i, segment in enumerate(segments):
+            segment['segment_id'] = i
+        doc['segments'] = segments
+        doc['image_path'] = img
+        labels = [-1 for _ in range(len(boxes))]
+        for i, box in enumerate(boxes):
+            child = {
+                'x_min': box[0],
+                'y_min': box[1],
+                'x_max': box[2],
+                'y_max': box[3]
+            }
+            for j, segment in enumerate(segments):
+                parent = segment['box']
+                if box_contained(child, parent, threshold=0.5):
+                    labels[i] = j
+                    break
+        doc['labels'] = labels
+    return docs
+
+def get_docs_with_ocr(items, model):
+    docs = get_docs(items)
+    docs = update_docs_with_ocr(items, docs, model)
     return docs
 
 
