@@ -166,3 +166,90 @@ Mon Nov 24 20:58:48 2025
 [I 2025-11-24 22:27:55.300 ServerApp] Kernel interrupted: 1888962d-d828-43c2-b6f5-a101b86556a6
 [I 2025-11-24 22:29:29.784 ServerApp] Saving file at /notebooks/evaluate.ipynb
 [I 2025-11-24 22:31:30.203 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:49:54.512 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:51:55.023 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:53:55.479 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:55:43.588 ServerApp] Kernel restarted: 1888962d-d828-43c2-b6f5-a101b86556a6
+[I 2025-11-24 22:55:43.669 ServerApp] Starting buffering for 1888962d-d828-43c2-b6f5-a101b86556a6:b1fc1c44-5890-4a08-89dd-ff07c8518582
+[I 2025-11-24 22:55:43.744 ServerApp] Connecting to kernel 1888962d-d828-43c2-b6f5-a101b86556a6.
+[I 2025-11-24 22:55:43.744 ServerApp] Restoring connection for 1888962d-d828-43c2-b6f5-a101b86556a6:b1fc1c44-5890-4a08-89dd-ff07c8518582
+[W 2025-11-24 22:55:48.252 ServerApp] Nudge: attempt 10 on kernel 1888962d-d828-43c2-b6f5-a101b86556a6
+[I 2025-11-24 22:55:56.402 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:57:57.409 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 22:59:58.412 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 23:01:58.814 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 23:03:59.522 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 23:05:59.894 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 23:08:00.501 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[W 2025-11-24 23:12:00.280 ServerApp] 404 GET /api/contents/data/DITrans-EMNLP/political_report/imgs/1_Is?content=0&hash=0&1764006080822 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 1.13ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 23:12:00.280 ServerApp] 404 GET /api/contents/data/DITrans-EMNLP/political_report/imgs/1_Is?content=0&hash=0&1764006080822 (192.168.1.109): No such file or directory: data/DITrans-EMNLP/political_report/imgs/1_Is
+[I 2025-11-24 23:12:00.975 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[W 2025-11-24 23:12:38.344 ServerApp] 404 GET /api/contents/data/DITrans-EMNLP/political_report/imgs/1_Is?content=0&hash=0&1764006118886 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.109) 0.86ms referer=http://localhost:8888/lab/tree/notebooks/evaluate.ipynb
+[W 2025-11-24 23:12:38.345 ServerApp] 404 GET /api/contents/data/DITrans-EMNLP/political_report/imgs/1_Is?content=0&hash=0&1764006118886 (192.168.1.109): No such file or directory: data/DITrans-EMNLP/political_report/imgs/1_Is
+[I 2025-11-24 23:14:01.578 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 23:16:02.061 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 23:18:02.775 ServerApp] Saving file at /notebooks/evaluate.ipynb
+[I 2025-11-24 23:23:40.705 ServerApp] Starting buffering for 1888962d-d828-43c2-b6f5-a101b86556a6:b1fc1c44-5890-4a08-89dd-ff07c8518582
+[I 2025-11-24 23:23:40.706 ServerApp] Starting buffering for 47bef070-1fb6-4557-b23f-f6db7d66dc6b:3e2f53cb-2a44-4d68-b7bc-4d79775ffd01
+[I 2025-11-24 23:23:40.706 ServerApp] Starting buffering for 19ac5b5c-a3f9-4857-becb-eddf0c2519ba:e4cc7753-e192-45bd-a248-8d4c754992d3
+[I 2025-11-24 23:23:40.706 ServerApp] Starting buffering for 9024347c-6907-4579-bdf7-c2b5834b1404:14f35afa-03aa-4710-b02e-fdde0b20d0f1
+[I 2025-11-24 23:26:41.048 ServerApp] Connecting to kernel 1888962d-d828-43c2-b6f5-a101b86556a6.
+[I 2025-11-24 23:26:41.048 ServerApp] Restoring connection for 1888962d-d828-43c2-b6f5-a101b86556a6:b1fc1c44-5890-4a08-89dd-ff07c8518582
+[I 2025-11-24 23:26:41.477 ServerApp] Connecting to kernel 19ac5b5c-a3f9-4857-becb-eddf0c2519ba.
+[I 2025-11-24 23:26:41.477 ServerApp] Restoring connection for 19ac5b5c-a3f9-4857-becb-eddf0c2519ba:e4cc7753-e192-45bd-a248-8d4c754992d3
+[I 2025-11-24 23:26:43.974 ServerApp] Connecting to kernel 9024347c-6907-4579-bdf7-c2b5834b1404.
+[I 2025-11-24 23:26:43.974 ServerApp] Restoring connection for 9024347c-6907-4579-bdf7-c2b5834b1404:14f35afa-03aa-4710-b02e-fdde0b20d0f1
+[I 2025-11-24 23:26:52.741 ServerApp] Connecting to kernel 47bef070-1fb6-4557-b23f-f6db7d66dc6b.
+[I 2025-11-24 23:26:52.742 ServerApp] Restoring connection for 47bef070-1fb6-4557-b23f-f6db7d66dc6b:3e2f53cb-2a44-4d68-b7bc-4d79775ffd01
+[I 2025-11-24 23:27:00.341 ServerApp] Creating new notebook in /notebooks
+[I 2025-11-24 23:27:06.451 ServerApp] Kernel started: 67919149-ba02-4dc4-9803-4d3c8bcb2a6d
+[I 2025-11-24 23:27:09.946 ServerApp] Connecting to kernel 67919149-ba02-4dc4-9803-4d3c8bcb2a6d.
+[I 2025-11-24 23:28:00.630 ServerApp] Kernel shutdown: 67919149-ba02-4dc4-9803-4d3c8bcb2a6d
+[W 2025-11-24 23:28:00.986 ServerApp] delete /notebooks/lay.ipynb
+[I 2025-11-24 23:28:32.091 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 23:30:33.114 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 23:32:33.424 ServerApp] Saving file at /notebooks/layout.ipynb
+[W 2025-11-24 23:32:52.154 ServerApp] 404 GET /api/contents/data/DITrans-EMNLP/political_report/imgs/1_Is?content=0&hash=0&1764007332709 (53178e9299a548e4ab4f7a468d57cf1c@192.168.1.108) 0.78ms referer=http://localhost:8888/lab/tree/notebooks/layout.ipynb
+[W 2025-11-24 23:32:52.154 ServerApp] 404 GET /api/contents/data/DITrans-EMNLP/political_report/imgs/1_Is?content=0&hash=0&1764007332709 (192.168.1.108): No such file or directory: data/DITrans-EMNLP/political_report/imgs/1_Is
+[I 2025-11-24 23:34:33.705 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 23:36:33.998 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 23:38:07.976 ServerApp] Starting buffering for 1888962d-d828-43c2-b6f5-a101b86556a6:b1fc1c44-5890-4a08-89dd-ff07c8518582
+[I 2025-11-24 23:38:34.367 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 23:40:34.868 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-24 23:42:20.502 ServerApp] Starting buffering for 47bef070-1fb6-4557-b23f-f6db7d66dc6b:3e2f53cb-2a44-4d68-b7bc-4d79775ffd01
+[I 2025-11-24 23:42:20.502 ServerApp] Starting buffering for 9024347c-6907-4579-bdf7-c2b5834b1404:14f35afa-03aa-4710-b02e-fdde0b20d0f1
+[I 2025-11-24 23:42:20.502 ServerApp] Starting buffering for 19ac5b5c-a3f9-4857-becb-eddf0c2519ba:e4cc7753-e192-45bd-a248-8d4c754992d3
+[I 2025-11-25 00:15:01.694 ServerApp] Connecting to kernel 9024347c-6907-4579-bdf7-c2b5834b1404.
+[I 2025-11-25 00:15:01.705 ServerApp] Restoring connection for 9024347c-6907-4579-bdf7-c2b5834b1404:14f35afa-03aa-4710-b02e-fdde0b20d0f1
+[I 2025-11-25 00:15:03.470 ServerApp] Connecting to kernel 47bef070-1fb6-4557-b23f-f6db7d66dc6b.
+[I 2025-11-25 00:15:03.470 ServerApp] Restoring connection for 47bef070-1fb6-4557-b23f-f6db7d66dc6b:3e2f53cb-2a44-4d68-b7bc-4d79775ffd01
+[I 2025-11-25 00:15:06.086 ServerApp] Connecting to kernel 19ac5b5c-a3f9-4857-becb-eddf0c2519ba.
+[I 2025-11-25 00:15:06.087 ServerApp] Restoring connection for 19ac5b5c-a3f9-4857-becb-eddf0c2519ba:e4cc7753-e192-45bd-a248-8d4c754992d3
+[I 2025-11-25 00:15:06.486 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:15:58.276 ServerApp] Connecting to kernel 1888962d-d828-43c2-b6f5-a101b86556a6.
+[I 2025-11-25 00:16:08.966 ServerApp] Creating new file in /notebooks
+[I 2025-11-25 00:17:07.112 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:18:46.309 ServerApp] Saving file at /notebooks/segment.py
+[I 2025-11-25 00:19:25.808 ServerApp] New terminal with automatic name: 1
+[I 2025-11-25 00:19:53.161 ServerApp] EOF on FD 74; stopping reading
+[I 2025-11-25 00:19:53.262 ServerApp] Terminal 1 closed
+[I 2025-11-25 00:19:57.597 ServerApp] New terminal with automatic name: 1
+[I 2025-11-25 00:20:46.437 ServerApp] Saving file at /notebooks/segment.py
+[I 2025-11-25 00:20:48.265 ServerApp] Saving file at /notebooks/segment.py
+[I 2025-11-25 00:21:01.572 ServerApp] Saving file at /notebooks/segment.py
+[I 2025-11-25 00:22:32.366 ServerApp] Saving file at /notebooks/segment.py
+[I 2025-11-25 00:23:07.454 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:23:25.039 ServerApp] Saving file at /notebooks/segment.py
+[I 2025-11-25 00:25:08.416 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:27:08.728 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:29:09.140 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:30:16.812 ServerApp] Saving file at /notebooks/segment.py
+[I 2025-11-25 00:31:09.601 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:33:10.022 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:35:10.461 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:37:10.922 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:39:11.360 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:40:42.323 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:42:42.803 ServerApp] Saving file at /notebooks/layout.ipynb
+[I 2025-11-25 00:44:43.158 ServerApp] Saving file at /notebooks/layout.ipynb
+slurmstepd: error: *** JOB 40194 ON cn46-l40 CANCELLED AT 2025-11-25T00:58:53 DUE TO TIME LIMIT ***

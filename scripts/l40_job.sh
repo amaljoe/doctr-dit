@@ -3,7 +3,7 @@
 #SBATCH --partition=l40
 #SBATCH --qos=l40
 #SBATCH --nodes=1
-#SBATCH --gres=gpu:4
+#SBATCH --gres=gpu:1
 #SBATCH --time=04:00:00
 
 # Print node info
