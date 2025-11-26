@@ -6027,3 +6027,4 @@ Wed Nov 26 07:42:12 2025
 [I 2025-11-26 07:44:26.751 ServerApp] Restoring connection for 8781954d-5e57-4b5c-9bd0-afd855031c88:b1e706a0-6814-4313-9eff-0834dcd09681
 [I 2025-11-26 07:44:36.064 ServerApp] Connecting to kernel ee84f0be-2245-4752-8883-763d0397d119.
 [I 2025-11-26 07:44:36.064 ServerApp] Restoring connection for ee84f0be-2245-4752-8883-763d0397d119:433dfc16-0083-41a9-82a7-2c54b19b1f98
+slurmstepd: error: *** JOB 40670 ON cn40-l40 CANCELLED AT 2025-11-26T07:46:36 ***

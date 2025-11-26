@@ -15,8 +15,8 @@ def detect_text_yolo(page):
         det_res: Detection results from the YOLOv10 model.
     """
     # Load the pre-trained model
-    model = YOLOv10("models/yolo.pt")
-
+    model = YOLOv10("models/best.pt")
+    
     # Perform prediction
     det_res = model.predict(
         page,   # Image to predict

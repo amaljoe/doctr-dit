@@ -144,3 +144,5 @@ data/
 outputs/
 fonts/
 runs/
+notebooks/wandb/
+notebooks/dit_trans/

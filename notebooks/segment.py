@@ -165,7 +165,7 @@ def get_docs(items):
                 box = info.get("line_box")
                 x_min, y_min, x_max, y_max = box[0]['x'], box[0]['y'], box[2]['x'], box[2]['y']
                 if sen_id in sentences.keys():
-                    if src[0] != ' ':
+                    if len(src) > 0 and src[0] != ' ':
                         src = ' ' + src
                     sentences[sen_id]['src'] += src
                     curr_box = sentences[sen_id]['box']
