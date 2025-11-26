@@ -60,3 +60,4 @@ Tue Nov 25 22:22:45 2025
         http://cn13-dgx:8889/lab?token=4e59defcb16661f19109dadcef6088fc1a00f92d5b2eba5c
         http://127.0.0.1:8889/lab?token=4e59defcb16661f19109dadcef6088fc1a00f92d5b2eba5c
 [I 2025-11-25 22:23:06.268 ServerApp] Skipped non-installed server(s): basedpyright, bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyrefly, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+slurmstepd: error: *** JOB 40594 ON cn13-dgx CANCELLED AT 2025-11-25T22:40:50 ***
