@@ -3623,3 +3623,71 @@ Wed Nov 26 11:57:19 2025
 [I 2025-11-26 12:00:39.105 ServerApp] Copying 'notebooks/dit_trans/yolov10m_doclayout/weights/best.pt' to '/models'
 [I 2025-11-26 12:00:55.766 ServerApp] Starting buffering for 32a64789-6d42-4635-b303-144907f84317:e5b07d8a-73c7-4919-a5e6-c934347b48aa
 [I 2025-11-26 12:00:56.707 ServerApp] Starting buffering for b7b628ff-5bc4-46fb-b530-f55e21b70027:d44dd1e2-066e-449d-9fc2-2dd15a590ecf
+[W 2025-11-26 12:04:03.909 ServerApp] Notebook demo/demo_notebook.ipynb is not trusted
+[I 2025-11-26 12:04:04.615 ServerApp] Connecting to kernel 32a64789-6d42-4635-b303-144907f84317.
+[I 2025-11-26 12:05:56.315 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:07:56.624 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:08:49.950 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:10:01.551 ServerApp] Creating new directory in 
+[W 2025-11-26 12:10:04.585 ServerApp] 400 PATCH /api/contents/Untitled%20Folder?1764139122413 (192.168.1.109): Cannot rename file or directory '/Untitled Folder'
+[W 2025-11-26 12:10:04.585 ServerApp] wrote error: "Cannot rename file or directory '/Untitled Folder'"
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 204, in patch
+        raise web.HTTPError(400, f"Cannot rename file or directory {path!r}")
+    tornado.web.HTTPError: HTTP 400: Bad Request (Cannot rename file or directory '/Untitled Folder')
+[W 2025-11-26 12:10:04.586 ServerApp] 400 PATCH /api/contents/Untitled%20Folder?1764139122413 (f8b25c20ca3c46b7b8f92a4f3d49298d@192.168.1.109) 1.55ms referer=http://localhost:8811/lab/tree/demo/app.py
+[W 2025-11-26 12:10:11.085 ServerApp] 400 PATCH /api/contents/Untitled%20Folder?1764139128914 (192.168.1.109): Cannot rename file or directory '/Untitled Folder'
+[W 2025-11-26 12:10:11.085 ServerApp] wrote error: "Cannot rename file or directory '/Untitled Folder'"
+    Traceback (most recent call last):
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/tornado/web.py", line 1848, in _execute
+        result = await result
+                 ^^^^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/auth/decorator.py", line 73, in inner
+        return await out
+               ^^^^^^^^^
+      File "/home/compiling-ganesh/24m0797/workspace/doctr-dit/.venv/lib/python3.13/site-packages/jupyter_server/services/contents/handlers.py", line 204, in patch
+        raise web.HTTPError(400, f"Cannot rename file or directory {path!r}")
+    tornado.web.HTTPError: HTTP 400: Bad Request (Cannot rename file or directory '/Untitled Folder')
+[W 2025-11-26 12:10:11.086 ServerApp] 400 PATCH /api/contents/Untitled%20Folder?1764139128914 (f8b25c20ca3c46b7b8f92a4f3d49298d@192.168.1.109) 1.10ms referer=http://localhost:8811/lab/tree/demo/app.py
+[W 2025-11-26 12:11:06.426 ServerApp] delete /Untitled Folder
+[I 2025-11-26 12:11:57.566 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:12:04.636 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:12:14.101 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:15:29.929 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:16:07.171 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:16:12.324 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:16:19.924 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:22:13.709 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:24:13.957 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:24:22.431 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:24:55.595 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:25:11.625 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:26:18.866 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:26:35.750 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:26:36.999 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:35:03.153 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:35:52.046 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 12:36:16.303 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:37:52.723 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 12:38:24.460 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 12:38:35.218 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:40:24.786 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 12:41:41.719 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 12:42:03.402 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:42:06.927 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:46:03.779 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:49:11.827 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 12:51:12.102 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 12:53:12.355 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 12:53:22.241 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 12:54:43.392 ServerApp] Saving file at /demo/app.py
+[I 2025-11-26 12:57:59.305 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 13:01:59.735 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 13:02:05.267 ServerApp] Saving file at /demo/utils.py
+[I 2025-11-26 13:02:11.115 ServerApp] Saving file at /demo/app.py

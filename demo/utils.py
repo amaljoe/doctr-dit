@@ -74,6 +74,56 @@ def _warn_rotation(entry: dict[str, Any]) -> None:  # pragma: no cover
         ROTATION_WARNING = True
 
 
+def estimate_bg_color(response, xmin, ymin, xmax, ymax, stride=2):
+    arr = np.array(response)
+
+    samples = []
+
+    # Top + bottom edges
+    for x in range(xmin, xmax, stride):
+        samples.append(arr[ymin, x])   # top
+        samples.append(arr[ymax-1, x]) # bottom
+
+    # Left + right edges
+    for y in range(ymin, ymax, stride):
+        samples.append(arr[y, xmin])   # left
+        samples.append(arr[y, xmax-1]) # right
+
+    samples = np.array(samples)
+
+    # Use median to avoid dark text contamination
+    bg_color = np.median(samples, axis=0).astype(np.uint8)
+
+    return tuple(bg_color.tolist())
+
+def estimate_font_color(response, xmin, ymin, xmax, ymax, bg_color, min_dist=30):
+    arr = np.array(response)[ymin:ymax, xmin:xmax]
+    h, w, _ = arr.shape
+    
+    # Compute distance to background
+    diff = np.sqrt(np.sum((arr - np.array(bg_color))**2, axis=2))
+
+    # Extract pixels FAR away from bg = likely text
+    mask = diff > min_dist
+    candidates = arr[mask]
+
+    if len(candidates) < 50:
+        # fallback: pick strong dark
+        return (0, 0, 0)
+
+    # Compute median color of text pixels
+    font = np.median(candidates, axis=0).astype(np.uint8)
+    return tuple(font.tolist())
+
+
+def ensure_contrast(bg, font, thresh=40):
+    L1 = 0.2126*bg[0] + 0.7152*bg[1] + 0.0722*bg[2]
+    L2 = 0.2126*font[0] + 0.7152*font[1] + 0.0722*font[2]
+    if abs(L1 - L2) < thresh:
+        # too low contrast → force black or white
+        return (0,0,0) if L1 > 128 else (255,255,255)
+    return font
+    
 def _synthesize(
     response: Image.Image,
     entry: dict[str, Any],
@@ -84,6 +134,7 @@ def _synthesize(
     smoothing_factor: float = 0.75,
     min_font_size: int = 6,
     max_font_size: int = 50,
+    bg = None,
 ) -> Image.Image:
     if len(entry["geometry"]) == 2:
         (xmin, ymin), (xmax, ymax) = entry["geometry"]
@@ -121,20 +172,28 @@ def _synthesize(
     # Create a mask for the word
     mask = Image.new("L", (w, h), 0)
     ImageDraw.Draw(mask).polygon([(int(round(w * x)), int(round(h * y))) for x, y in polygon], fill=255)
-    
 
-    # Draw the word text with proper shaping for complex scripts like Malayalam
+    
     # Draw the word text with proper shaping for complex scripts like Malayalam
     d = ImageDraw.Draw(response)
+
+    # Draw background
+    bg_color = estimate_bg_color(response, xmin, ymin, xmax, ymax)
+    font_color = estimate_font_color(response, xmin, ymin, xmax, ymax, bg_color)
+    font_color = ensure_contrast(bg_color, font_color)
+
+    d.polygon([(int(round(w * x)), int(round(h * y))) for x, y in polygon], fill=bg_color)
+
+    
     try:
         # Use text() method which handles complex scripts better than multiline_text()
         # Ensure font supports the script by using the font file directly
-        d.text((xmin, ymin), word_text, font=font, fill=(0, 0, 0), anchor="lt")
+        d.text((xmin, ymin), word_text, font=font, fill=font_color, anchor="lt")
     except Exception as e:
         try:
-            d.multiline_text((xmin, ymin), word_text, font=font, fill=(0, 0, 0))
+            d.multiline_text((xmin, ymin), word_text, font=font, fill=font_color)
         except UnicodeEncodeError:
-            d.multiline_text((xmin, ymin), anyascii(word_text), font=font, fill=(0, 0, 0))
+            d.multiline_text((xmin, ymin), anyascii(word_text), font=font, fill=font_color)
         except Exception as render_err:
             print(f"Render error: {render_err}")
             logging.warning(f"Could not render word: {word_text}")
@@ -169,6 +228,7 @@ def _synthesize(
 
 def synthesize_page(
     page: dict[str, Any],
+    bg,
     draw_proba: bool = False,
     font_family: str | None = None,
     smoothing_factor: float = 0.95,
@@ -190,7 +250,7 @@ def synthesize_page(
     """
     # Draw template
     h, w = page["dimensions"]
-    response = Image.new("RGB", (w, h), color=(255, 255, 255))
+    response = Image.fromarray(bg.astype("uint8"), mode="RGB")
 
     for block in page["blocks"]:
         # If lines are provided use these to get better rendering results
@@ -207,6 +267,7 @@ def synthesize_page(
                     smoothing_factor=smoothing_factor,
                     min_font_size=min_font_size,
                     max_font_size=max_font_size,
+                    bg=bg,
                 )
         # Otherwise, draw each word
         else:
@@ -223,6 +284,7 @@ def synthesize_page(
                         smoothing_factor=smoothing_factor,
                         min_font_size=min_font_size,
                         max_font_size=max_font_size,
+                        bg=bg,
                     )
 
     return np.array(response, dtype=np.uint8)

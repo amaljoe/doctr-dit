@@ -1,8 +1,3 @@
-# Copyright (C) 2021-2025, Mindee.
-
-# This program is licensed under the Apache License 2.0.
-# See LICENSE or go to <https://opensource.org/licenses/Apache-2.0> for full license details.
-
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
@@ -24,7 +19,7 @@ def main(det_archs, reco_archs):
     st.set_page_config(layout="wide")
 
     # Designing the interface
-    st.title("DIT Pro: Document Image Translation")
+    st.title("End to End Document Image Translation")
     # For newline
     st.write("\n")
     # Instructions
@@ -32,10 +27,10 @@ def main(det_archs, reco_archs):
         "*Hint: click on the top-right corner of an image to enlarge it!*")
     # Set the columns
     cols = st.columns((1, 1, 1, 1))
-    cols[0].subheader("Input page")
-    cols[1].subheader("Segmentation heatmap")
-    cols[2].subheader("OCR output")
-    cols[3].subheader("Page reconstitution")
+    cols[0].subheader("1. Input page")
+    cols[1].subheader("2. OCR output")
+    cols[2].subheader("3. Layout Analysis")
+    cols[3].subheader("5. Page reconstitution")
 
     # Sidebar
     # File selection
@@ -105,39 +100,45 @@ def main(det_archs, reco_archs):
                     device=forward_device,
                 )
 
-            with st.spinner("Analyzing..."):
-                # Forward the image to the model
-                seg_map = forward_image(predictor, page, forward_device)
-                seg_map = np.squeeze(seg_map)
-                seg_map = cv2.resize(
-                    seg_map, (page.shape[1], page.shape[0]), interpolation=cv2.INTER_LINEAR)
+            with st.spinner("Detecting text..."):
+                # # Forward the image to the model
+                # seg_map = forward_image(predictor, page, forward_device)
+                # seg_map = np.squeeze(seg_map)
+                # seg_map = cv2.resize(
+                #     seg_map, (page.shape[1], page.shape[0]), interpolation=cv2.INTER_LINEAR)
 
-                # Plot the raw heatmap
-                fig, ax = plt.subplots()
-                ax.imshow(seg_map)
-                ax.axis("off")
-                cols[1].pyplot(fig)
+                # # Plot the raw heatmap
+                # fig, ax = plt.subplots()
+                # ax.imshow(seg_map)
+                # ax.axis("off")
+                # cols[1].pyplot(fig)
 
                 # Plot OCR output
                 out = predictor([page])
                 fig = visualize_page(out.pages[0].export(
                 ), out.pages[0].page, interactive=False, add_labels=False)
+                cols[1].pyplot(fig)
                 cols[2].pyplot(fig)
-
+                
+            with st.spinner("Understanding layout..."):
                 # Page reconsitution under input page
                 page_export = out.pages[0].export()
                 page_export = update_page_with_layout(page, page_export)
-                page_export = translate_lines(page_export)
+            with st.spinner("Translating text..."):
+                # page_export = translate_lines(page_export)
+                # Display JSON
+                st.subheader("\n4. Translation input and output:")
+                st.json(page_export, expanded=False)
+                
                 if assume_straight_pages or (not assume_straight_pages and straighten_pages):
                     img = synthesize_page(
                         page_export,
+                        out.pages[0].page,
                         font_family="fonts/noto-mal.ttf",
                     )
                     cols[3].image(img, clamp=True)
 
-                # Display JSON
-                st.markdown("\nHere are your analysis results in JSON format:")
-                st.json(page_export, expanded=False)
+                
 
 
 if __name__ == "__main__":
