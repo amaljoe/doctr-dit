@@ -84,6 +84,7 @@ def get_line(box, geometry):
     text = ""
     for child in box:
         text += child['value'] + " "
+    seg_id = box[0]['seg_id'] if len(box) > 0 else 0
     geometry = ((np.float32(geometry[0]), np.float32(
         geometry[1])), (np.float32(geometry[2]), np.float32(geometry[3])))
     num_lines = len(set([child['line_id'] for child in box]))
@@ -98,7 +99,8 @@ def get_line(box, geometry):
                     'confidence':  None
                 },
                 "value": text.strip(),
-                "geometry": geometry
+                "geometry": geometry,
+                "seg_id": seg_id
             }]
     }
 

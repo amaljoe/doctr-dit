@@ -254,8 +254,10 @@ def visualize_page(
             if interactive:
                 # add patch to cursor's artists
                 artists.append(rect)
-
-        lines = old_lines if old_lines is not None else block["lines"]
+                
+        lines = block["lines"] 
+        if old_lines is not None:
+            lines = lines + old_lines 
 
         for i, line in enumerate(lines):
             if not words_only:
@@ -274,7 +276,7 @@ def visualize_page(
                     page["dimensions"],
                     label=f"{word['value']} (confidence: {word['confidence']:.2%})",
                     color=color,
-                    fill=True,
+                    fill=seg_id != -1 or old_lines is None,
                     **kwargs,
                 )
                 ax.add_patch(rect)
