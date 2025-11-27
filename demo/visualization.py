@@ -198,7 +198,7 @@ def visualize_page(
     ax.imshow(image)
     # hide both axis
     ax.axis("off")
-    colors = get_colors(5)
+    colors = get_colors(5) + [(0, 0, 1)]
 
     if interactive:
         artists: list[patches.Patch] = []  # instantiate an empty list of patches (to be drawn on the page)
@@ -267,8 +267,8 @@ def visualize_page(
                     artists.append(rect)
 
             for word in line["words"]:
-                seg_id = word.get('seg_id', 0)
-                color = colors[seg_id % 5]
+                seg_id = word.get('seg_id', -1)
+                color = colors[seg_id % 5] if seg_id >= 0 else colors[-1]
                 rect = create_obj_patch(
                     word["geometry"],
                     page["dimensions"],
