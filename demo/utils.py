@@ -96,7 +96,7 @@ def estimate_bg_color(response, xmin, ymin, xmax, ymax, stride=2):
 
     return tuple(bg_color.tolist())
 
-def estimate_font_color(response, xmin, ymin, xmax, ymax, bg_color, min_dist=30):
+def estimate_font_color(response, xmin, ymin, xmax, ymax, bg_color, min_dist=100):
     arr = np.array(response)[ymin:ymax, xmin:xmax]
     h, w, _ = arr.shape
     
@@ -107,7 +107,7 @@ def estimate_font_color(response, xmin, ymin, xmax, ymax, bg_color, min_dist=30)
     mask = diff > min_dist
     candidates = arr[mask]
 
-    if len(candidates) < 50:
+    if len(candidates) < 1:
         # fallback: pick strong dark
         return (0, 0, 0)
 
@@ -164,7 +164,7 @@ def _synthesize(
         word_text,
         word_width,
         word_height,
-        font_path=font_family if font_family is not None else "NotoSans-Regular.ttf",
+        font_path=font_family if font_family is not None else "fonts/noto-mal.ttf",
         max_font=max_font_size,
         min_font=min_font_size,
     )
@@ -224,6 +224,32 @@ def _synthesize(
 
     return response
 
+
+def extract_source_target_pairs(page):
+    """
+    Extract [{source: original_value, target: value}] from a page dict.
+    """
+
+    results = []
+
+    # Safety checks
+    if "blocks" not in page:
+        return results
+
+    for block in page.get("blocks", []):
+        for line in block.get("lines", []):
+            for word in line.get("words", []):
+                original = word.get("original_value")
+                target = word.get("value")
+
+                # Only add if both sides exist
+                if original is not None and target is not None:
+                    results.append({
+                        "source": original,
+                        "target": target
+                    })
+
+    return results
 
 
 def synthesize_page(

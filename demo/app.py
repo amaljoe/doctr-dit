@@ -6,7 +6,7 @@ import torch
 from backend.pytorch import DET_ARCHS, RECO_ARCHS, forward_image, load_predictor
 
 from translation import translate_lines, update_page_with_layout
-from utils import synthesize_page
+from utils import synthesize_page, extract_source_target_pairs
 from doctr.io import DocumentFile
 from doctr.utils.visualization import visualize_page
 
@@ -30,7 +30,7 @@ def main(det_archs, reco_archs):
     cols[0].subheader("1. Input page")
     cols[1].subheader("2. OCR output")
     cols[2].subheader("3. Layout Analysis")
-    cols[3].subheader("5. Page reconstitution")
+    cols[3].subheader("5. Page reconstruction")
 
     # Sidebar
     # File selection
@@ -53,33 +53,39 @@ def main(det_archs, reco_archs):
     st.sidebar.markdown("**Backend**: PyTorch")
     det_arch = st.sidebar.selectbox("Text detection model", det_archs)
     reco_arch = st.sidebar.selectbox("Text recognition model", reco_archs)
+    layout_models = ["No Layout Analysis", "LayoutLM + Decoder (Ours)"]
+    layout_model = st.sidebar.selectbox("Layout analysis model", layout_models, index=len(layout_models) - 1)
+    langs = ["English", "Chinese", "German", "French", "Hindi", "Malayalam", "Telugu", "Tamil"]
+    lang_dict = {
+        "English": ("eng_Latn", "noto.ttf"),
+        "Simplified Chinese": ("zho_Hans", "noto-chinese.ttf"),
+        "German": ("deu_Latn", "noto.ttf"),
+        "French": ("fra_Latn", "noto.ttf"),
+        "Hindi": ("hin_Deva", "noto-deva.ttf"),
+        "Malayalam": ("mal_Mlym", "noto-mal.ttf"),
+        "Telugu": ("tel_Telu", "noto-telugu.ttf"),
+        "Tamil": ("tam_Taml", "noto-tamil.ttf"),
+    }
+
+    target_language = st.sidebar.selectbox("Target language", langs, index=5)
 
     # For newline
     st.sidebar.write("\n")
     # Only straight pages or possible rotation
-    st.sidebar.title("Parameters")
-    assume_straight_pages = st.sidebar.checkbox(
-        "Assume straight pages", value=True)
-    # Disable page orientation detection
-    disable_page_orientation = st.sidebar.checkbox(
-        "Disable page orientation detection", value=False)
-    # Disable crop orientation detection
-    disable_crop_orientation = st.sidebar.checkbox(
-        "Disable crop orientation detection", value=False)
-    # Straighten pages
-    straighten_pages = st.sidebar.checkbox("Straighten pages", value=False)
-    # Export as straight boxes
-    export_straight_boxes = st.sidebar.checkbox(
-        "Export as straight boxes", value=False)
-    st.sidebar.write("\n")
-    # Binarization threshold
-    bin_thresh = st.sidebar.slider(
-        "Binarization threshold", min_value=0.1, max_value=0.9, value=0.3, step=0.1)
-    st.sidebar.write("\n")
-    # Box threshold
-    box_thresh = st.sidebar.slider(
-        "Box threshold", min_value=0.1, max_value=0.9, value=0.1, step=0.1)
-    st.sidebar.write("\n")
+    # st.sidebar.title("Parameters")
+    assume_straight_pages = True
+    disable_page_orientation = False
+    disable_crop_orientation = False
+    straighten_pages = False
+    export_straight_boxes = False
+    bin_thresh = 0.3
+    box_thresh = 0.1
+    # bin_thresh = st.sidebar.slider(
+    #     "Binarization threshold", min_value=0.1, max_value=0.9, value=0.3, step=0.1)
+    # st.sidebar.write("\n")
+    # box_thresh = st.sidebar.slider(
+    #     "Box threshold", min_value=0.1, max_value=0.9, value=0.1, step=0.1)
+    # st.sidebar.write("\n")
 
     if st.sidebar.button("Analyze page"):
         if uploaded_file is None:
@@ -125,16 +131,17 @@ def main(det_archs, reco_archs):
                 page_export = out.pages[0].export()
                 page_export = update_page_with_layout(page, page_export)
             with st.spinner("Translating text..."):
-                # page_export = translate_lines(page_export)
+                page_export = translate_lines(page_export, lang=lang_dict[target_language][0])
                 # Display JSON
+                pairs = extract_source_target_pairs(page_export)
                 st.subheader("\n4. Translation input and output:")
-                st.json(page_export, expanded=False)
+                st.json(pairs, expanded=True)
                 
                 if assume_straight_pages or (not assume_straight_pages and straighten_pages):
                     img = synthesize_page(
                         page_export,
                         out.pages[0].page,
-                        font_family="fonts/noto-mal.ttf",
+                        font_family=f"fonts/{lang_dict[target_language][1]}",
                     )
                     cols[3].image(img, clamp=True)
 

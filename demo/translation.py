@@ -114,8 +114,8 @@ def update_page_with_layout(page, page_export):
     return page_export
 
 
-def translate_lines(page_export):
-    translator = pipeline("translation", model="facebook/nllb-200-distilled-600M", src_lang="eng_Latn", tgt_lang="mal_Mlym")
+def translate_lines(page_export, lang="mal_Mlym"):
+    translator = pipeline("translation", model="facebook/nllb-200-distilled-600M", src_lang="eng_Latn", tgt_lang=lang)
     values = []
     for block in page_export['blocks']:
         for line in block['lines']:
@@ -127,6 +127,7 @@ def translate_lines(page_export):
     for block in page_export['blocks']:
         for line in block['lines']:
             for word in line['words']:
+                word['original_value'] = word['value']
                 word['value'] = translations.pop(0)['translation_text']
     return page_export
 
