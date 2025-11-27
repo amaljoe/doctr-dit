@@ -82,11 +82,14 @@ def get_big_boxes(page_export, det_res, types):
 
 def get_line(box, geometry):
     text = ""
+    child = box[0]
+    line_x_min, line_y_min, line_x_max, line_y_max = child['geometry'][0][0], child['geometry'][0][1], child['geometry'][1][0], child['geometry'][1][1]
     for child in box:
         text += child['value'] + " "
+        x_min, y_min, x_max, y_max = child['geometry'][0][0], child['geometry'][0][1], child['geometry'][1][0], child['geometry'][1][1]
+        line_x_min, line_y_min, line_x_max, line_y_max = min(line_x_min, x_min), min(line_y_min, y_min), max(line_x_max, x_max), max(line_y_max, y_max)
     seg_id = box[0]['seg_id'] if len(box) > 0 else 0
-    geometry = ((np.float32(geometry[0]), np.float32(
-        geometry[1])), (np.float32(geometry[2]), np.float32(geometry[3])))
+    geometry = ((np.float32(line_x_min), np.float32(line_y_min)), (line_x_max, line_y_max))
     num_lines = len(set([child['line_id'] for child in box]))
     return {
         "geometry": geometry,
