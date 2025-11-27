@@ -73,6 +73,7 @@ def get_big_boxes(page_export, det_res, types):
                 best_match = candidates[0][0]
 
                 word['line_id'] = idx
+                word['seg_id'] = best_match
                 big_boxes_children[best_match].append(word)
             else:
                 print("No 75% match:", word)
@@ -110,8 +111,9 @@ def update_page_with_layout(page, page_export):
     big_boxes, big_boxes_children = get_big_boxes(page_export, det_res, types)
     lines = [get_line(big_boxes_children[i], big_boxes[i]) for i in range(
         len(big_boxes)) if big_boxes_children[i] and types[i]]
+    old_lines = page_export['blocks'][0]['lines']
     page_export['blocks'][0]['lines'] = lines
-    return page_export
+    return page_export, old_lines
 
 
 def translate_lines(page_export, lang="mal_Mlym"):

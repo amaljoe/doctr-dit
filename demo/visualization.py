@@ -11,7 +11,6 @@ import matplotlib.patches as patches
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.figure import Figure
-
 from doctr.utils.common_types import BoundingBox, Polygon4P
 
 __all__ = ["visualize_page", "visualize_kie_page", "draw_boxes"]
@@ -161,6 +160,7 @@ def visualize_page(
     interactive: bool = True,
     add_labels: bool = True,
     boxes: np.ndarray | None = None,
+    old_lines = None,
     **kwargs: Any,
 ) -> Figure:
     """Visualize a full page with predicted blocks, lines and words
@@ -198,6 +198,7 @@ def visualize_page(
     ax.imshow(image)
     # hide both axis
     ax.axis("off")
+    colors = get_colors(5)
 
     if interactive:
         artists: list[patches.Patch] = []  # instantiate an empty list of patches (to be drawn on the page)
@@ -242,7 +243,7 @@ def visualize_page(
             ax.add_patch(rect)
             if interactive:
                 artists.append(rect)
-
+        
     for block in page["blocks"]:
         if not words_only:
             rect = create_obj_patch(
@@ -254,7 +255,9 @@ def visualize_page(
                 # add patch to cursor's artists
                 artists.append(rect)
 
-        for line in block["lines"]:
+        lines = old_lines if old_lines is not None else block["lines"]
+
+        for i, line in enumerate(lines):
             if not words_only:
                 rect = create_obj_patch(
                     line["geometry"], page["dimensions"], label="line", color=(1, 0, 0), linewidth=1, **kwargs
@@ -264,11 +267,14 @@ def visualize_page(
                     artists.append(rect)
 
             for word in line["words"]:
+                seg_id = word.get('seg_id', 0)
+                color = colors[seg_id % 5]
                 rect = create_obj_patch(
                     word["geometry"],
                     page["dimensions"],
                     label=f"{word['value']} (confidence: {word['confidence']:.2%})",
-                    color=(0, 0, 1),
+                    color=color,
+                    fill=True,
                     **kwargs,
                 )
                 ax.add_patch(rect)
@@ -293,7 +299,7 @@ def visualize_page(
                             word["value"],
                             size=10,
                             alpha=0.5,
-                            color=(0, 0, 1),
+                            color=color,
                         )
 
         if display_artefacts:

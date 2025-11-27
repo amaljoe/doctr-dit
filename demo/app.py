@@ -8,7 +8,7 @@ from backend.pytorch import DET_ARCHS, RECO_ARCHS, forward_image, load_predictor
 from translation import translate_lines, update_page_with_layout
 from utils import synthesize_page, extract_source_target_pairs
 from doctr.io import DocumentFile
-from doctr.utils.visualization import visualize_page
+from visualization import visualize_page
 
 forward_device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -124,12 +124,14 @@ def main(det_archs, reco_archs):
                 fig = visualize_page(out.pages[0].export(
                 ), out.pages[0].page, interactive=False, add_labels=False)
                 cols[1].pyplot(fig)
-                cols[2].pyplot(fig)
                 
             with st.spinner("Understanding layout..."):
                 # Page reconsitution under input page
                 page_export = out.pages[0].export()
-                page_export = update_page_with_layout(page, page_export)
+                page_export, old_lines = update_page_with_layout(page, page_export)
+                fig = visualize_page(page_export, out.pages[0].page, old_lines=old_lines, interactive=False, add_labels=False)
+                cols[2].pyplot(fig)
+                
             with st.spinner("Translating text..."):
                 page_export = translate_lines(page_export, lang=lang_dict[target_language][0])
                 # Display JSON
