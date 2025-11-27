@@ -133,11 +133,11 @@ def main(det_archs, reco_archs):
                 cols[2].pyplot(fig)
                 
             with st.spinner("Translating text..."):
-                # page_export = translate_lines(page_export, lang=lang_dict[target_language][0])
+                page_export = translate_lines(page_export, lang=lang_dict[target_language][0])
                 # Display JSON
-                # pairs = extract_source_target_pairs(page_export)
-                # st.subheader("\n4. Translation input and output:")
-                # st.json(pairs, expanded=True)
+                pairs = extract_source_target_pairs(page_export)
+                st.subheader("\n4. Translation input and output:")
+                st.json(pairs, expanded=True)
                 
                 if assume_straight_pages or (not assume_straight_pages and straighten_pages):
                     img = synthesize_page(

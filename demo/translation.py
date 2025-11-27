@@ -107,6 +107,10 @@ def get_line(box, geometry):
             }]
     }
 
+def adjust_overlap(lines):
+    return lines
+    
+
 
 def update_page_with_layout(page, page_export):
     det_res = detect_text_yolo(page)
@@ -116,10 +120,10 @@ def update_page_with_layout(page, page_export):
     big_boxes, big_boxes_children = get_big_boxes(page_export, det_res, types)
     lines = [get_line(big_boxes_children[i], big_boxes[i]) for i in range(
         len(big_boxes)) if big_boxes_children[i] and types[i]]
+    lines = adjust_overlap(lines)
     old_lines = page_export['blocks'][0]['lines']
     page_export['blocks'][0]['lines'] = lines
     return page_export, old_lines
-
 
 def translate_lines(page_export, lang="mal_Mlym"):
     translator = pipeline("translation", model="facebook/nllb-200-distilled-600M", src_lang="eng_Latn", tgt_lang=lang)
