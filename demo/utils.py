@@ -43,20 +43,44 @@ def wrap_text_to_pixels(text, font, max_width, draw):
 
     return "\n".join(lines)
 
+def get_text_bbox(text, font):
+    # 1. Create Black Image (0)
+    mask = Image.new("L", (2000, 2000), 0)
+    draw = ImageDraw.Draw(mask)
+    
+    # 2. Draw White Text (255)
+    draw.multiline_text((0, 0), text, font=font, fill=255)
+    
+    # 3. Get the bounding box
+    bbox = mask.getbbox()
+    
+    # SAFETY CHECK: If text is empty/spaces, bbox is None
+    if bbox is None:
+        return 0, 0
+
+    # 4. Calculate Width (x2 - x1) and Height (y2 - y1)
+    width = bbox[2] - bbox[0]
+    height = bbox[3] - bbox[1]
+    
+    return width, height
 
 def fit_text_to_box(text, box_width, box_height, font_path="NotoSans-Regular.ttf",
                     max_font=80, min_font=12):
     for font_size in range(max_font, min_font, -2):
         font = ImageFont.truetype(font_path, font_size)
 
-        dummy = Image.new("RGB", (box_width, box_height))
+        dummy = Image.new("RGB", (box_width * 2, box_height * 2))
         draw = ImageDraw.Draw(dummy)
 
         wrapped = wrap_text_to_pixels(text, font, box_width, draw)
-        bbox = draw.multiline_textbbox((0, 0), wrapped, font=font)
-        w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
 
+        bbox = draw.multiline_textbbox((0, 0), wrapped, font=font)
+        
+        w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        
+        
         if w <= box_width and h <= box_height:
+            print(f"font size: {font_size}, w = {w}, h = {h}, box_width = {box_width}, box_height = {box_height}")
             return wrapped, font
 
     # fallback
@@ -64,7 +88,7 @@ def fit_text_to_box(text, box_width, box_height, font_path="NotoSans-Regular.ttf
     dummy = Image.new("RGB", (box_width, box_height))
     draw = ImageDraw.Draw(dummy)
     wrapped = wrap_text_to_pixels(text, font, box_width, draw)
-
+    # d.text((xmin, ymin), word_text, font=font, fill=font_color, anchor="lt")
     return wrapped, font
 
 def _warn_rotation(entry: dict[str, Any]) -> None:  # pragma: no cover
@@ -160,7 +184,7 @@ def _synthesize(
     else:
         word_text = entry["value"]
 
-    word_text,  font = fit_text_to_box(
+    word_text, font = fit_text_to_box(
         word_text,
         word_width,
         word_height,
